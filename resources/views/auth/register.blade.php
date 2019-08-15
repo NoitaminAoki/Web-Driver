@@ -28,7 +28,7 @@
                             <label for="photo_profile" class="col-md-4 col-form-label text-md-right">{{ __('Photo Profile') }}</label>
 
                             <div class="col-md-6">
-                                <input id="photo_profile" type="file" accept=".png,.jpg,.jpeg" class="my-custom-file-input @error('photo_profile') is-invalid @enderror" name="photo_profile" value="{{ old('photo_profile') }}" required autocomplete="photo_profile" autofocus>
+                                <input id="photo_profile" type="file" accept=".png,.jpg,.jpeg" class="my-custom-file-input @error('photo_profile') is-invalid @enderror" name="photo_profile" value="{{ old('photo_profile') }}" autocomplete="photo_profile" autofocus>
 
                                 @error('photo_profile')
                                     <span class="invalid-feedback" role="alert">
@@ -41,7 +41,7 @@
                             <label for="photo_ktp" class="col-md-4 col-form-label text-md-right">{{ __('Photo KTP') }}</label>
 
                             <div class="col-md-6">
-                                <input id="photo_ktp" type="file" accept=".png,.jpg,.jpeg" class="my-custom-file-input @error('photo_ktp') is-invalid @enderror" name="photo_ktp" value="{{ old('photo_ktp') }}" required autocomplete="photo_ktp" autofocus>
+                                <input id="photo_ktp" type="file" accept=".png,.jpg,.jpeg" class="my-custom-file-input @error('photo_ktp') is-invalid @enderror" name="photo_ktp" value="{{ old('photo_ktp') }}" autocomplete="photo_ktp" autofocus>
 
                                 @error('photo_ktp')
                                     <span class="invalid-feedback" role="alert">

@@ -15,7 +15,8 @@ Route::view('/', 'welcome');
 
 Auth::routes();
 Route::group(['middleware' => 'auth'], function () {
-    
+    Route::post('driver/login', 'Auth\LoginController@customLogin')->name('auth.login.custom');
+    Route::get('driver/home', 'Driver\DriverController@index')->name('driver.index');
     Route::view('/daftar', 'employee_index');
     Route::view('/driver/daftar', 'driver_registration');
     

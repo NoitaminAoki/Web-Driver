@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-@include('template.admin.head')
+@include('template.head')
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed">
   <div class="wrapper">
     
-    @include('template.admin.navbar')
+    @include('template.navbar')
     
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-light-info elevation-4">
@@ -16,7 +16,7 @@
         <br>
       </a>
       
-      @include('template.admin.sidebar')
+      @include('template.sidebar')
     </aside>
     
     
@@ -64,6 +64,6 @@
     <!-- /.control-sidebar -->
   </div>
   <!-- ./wrapper -->
-  @include('template.admin.scripts')
+  @include('template.scripts')
 </body>
 </html>

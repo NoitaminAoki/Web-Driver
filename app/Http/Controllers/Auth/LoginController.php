@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-
+use App\User;
+use Auth;
 class LoginController extends Controller
 {
     /*
@@ -25,7 +26,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = 'driver/home';
 
     /**
      * Create a new controller instance.
@@ -35,5 +36,17 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    public function customLogin(Request $request)
+    {
+        $request::validate(['no_pol' => ['required'], 'password' => ['required']]);
+        $user = User::where('no_pol', '=', $request->no_pol)->first();
+        if(empty($user)) {
+            $error = ['user' => 'Nomor Polisi atau password yang anda masukkan salah!'];
+            return redirect()->back()->withErrors(['error' => $error]);
+        }
+        Auth::login($user);
+        return redirect()->route('driver.index');
     }
 }
