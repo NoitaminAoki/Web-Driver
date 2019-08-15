@@ -1,117 +1,189 @@
-@extends('layouts.app')
-
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="photo_profile" class="col-md-4 col-form-label text-md-right">{{ __('Photo Profile') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="photo_profile" type="file" accept=".png,.jpg,.jpeg" class="my-custom-file-input @error('photo_profile') is-invalid @enderror" name="photo_profile" value="{{ old('photo_profile') }}" required autocomplete="photo_profile" autofocus>
-
-                                @error('photo_profile')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="photo_ktp" class="col-md-4 col-form-label text-md-right">{{ __('Photo KTP') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="photo_ktp" type="file" accept=".png,.jpg,.jpeg" class="my-custom-file-input @error('photo_ktp') is-invalid @enderror" name="photo_ktp" value="{{ old('photo_ktp') }}" required autocomplete="photo_ktp" autofocus>
-
-                                @error('photo_ktp')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="no_telp" class="col-md-4 col-form-label text-md-right">{{ __('No Telp') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="no_telp" type="text" class="form-control @error('no_telp') is-invalid @enderror" name="no_telp" value="{{ old('no_telp') }}" required autocomplete="no_telp" autofocus>
-
-                                @error('no_telp')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Daftar Pengemudi - CleoWebDriver</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->	
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i,700,700i&display=swap" rel="stylesheet">
+    <!--===============================================================================================-->	
+    <link rel="icon" type="image/png" href="{{asset('pluginlogin/images/icons/favicon.ico')}}"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{asset('pluginlogin/vendor/bootstrap/css/bootstrap.min.css')}}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{asset('pluginlogin/fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{asset('pluginlogin/fonts/Linearicons-Free-v1.0.0/icon-font.min.css')}}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{asset('pluginlogin/vendor/animate/animate.css')}}">
+    <!--===============================================================================================-->	
+    <link rel="stylesheet" type="text/css" href="{{asset('pluginlogin/vendor/css-hamburgers/hamburgers.min.css')}}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{asset('pluginlogin/vendor/animsition/css/animsition.min.css')}}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{asset('pluginlogin/vendor/select2/select2.min.css')}}">
+    <!--===============================================================================================-->	
+    <link rel="stylesheet" type="text/css" href="{{asset('pluginlogin/vendor/daterangepicker/daterangepicker.css')}}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{asset('pluginlogin/css/util.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('pluginlogin/css/main.css')}}">
+    <!--===============================================================================================-->
+</head>
+<body>
+    
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <div class="login100-form-title" style="background-image: url({{asset('pluginlogin/images/bg-01.jpg')}});">
+                    <span class="login100-form-title-1">
+                        Daftar AKUN
+                    </span>
+                    <span class="login100-form-title-2">
+                        Silahkan Daftar terlebih dahulu untuk mengakses portal beranda
+                    </span>
                 </div>
+                
+                <form class="login100-form validate-form" method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+                    @csrf
+                    
+                    <div class="wrap-input100 validate-input m-b-26" data-validate="Nama is required">
+                        <span class="label-input100">Nama</span>
+                        <input class="input100" id="name" type="text" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                        @error('name')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                        <span class="focus-input100"></span>
+                    </div>
+                    
+                    <div class="wrap-input100 validate-input m-b-26" data-validate="Email is required">
+                        <span class="label-input100">Foto Profil</span>
+                        <input class="input100" id="photo_profile" type="file" accept=".png,.jpg,.jpeg" name="photo_profile" value="{{ old('photo_profile') }}" required autocomplete="photo_profile" autofocus>
+                        @error('photo_profile')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                        <span class="focus-input100"></span>
+                    </div>
+                    
+                    <div class="wrap-input100 validate-input m-b-26" data-validate="Email is required">
+                        <span class="label-input100">Foto KTP</span>
+                        <input class="input100" id="photo_ktp" type="file" accept=".png,.jpg,.jpeg" name="photo_ktp" value="{{ old('photo_ktp') }}" required autocomplete="photo_ktp" autofocus>
+                        @error('photo_ktp')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                        <span class="focus-input100"></span>
+                    </div>
+                    
+                    <div class="wrap-input100 validate-input m-b-26" data-validate="Email is required">
+                        <span class="label-input100">Nomer Telepon</span>
+                        <input class="input100" id="no_telp" type="text" name="no_telp" value="{{ old('no_telp') }}" required autocomplete="no_telp" autofocus>
+                        @error('no_telp')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                        <span class="focus-input100"></span>
+                    </div>
+                    
+                    <div class="wrap-input100 validate-input m-b-26" data-validate="Email is required">
+                        <span class="label-input100">Email</span>
+                        <input class="input100" id="email" type="email" name="email" value="{{ old('email') }}" required autocomplete="email">
+                        @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                        <span class="focus-input100"></span>
+                    </div>
+                    
+                    <div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
+                        <span class="label-input100">Sandi</span>
+                        <input class="input100" id="password" type="password" name="password" required autocomplete="new-password">
+                        @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                        <span class="focus-input100"></span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
+                        <span class="label-input100">Konfirmasi Sandi</span>
+                        <input class="input100" id="password-confirm" type="password" name="password_confirmation" required autocomplete="new-password">
+                        <span class="focus-input100"></span>
+                    </div>
+                    
+                    <div class="flex-sb-m w-full p-b-30">
+                        <div class="contact100-form-checkbox">
+                            <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+                            <label class="label-checkbox100" for="ckb1">
+                                Selalu saya
+                            </label>
+                        </div>
+                        <div>
+                            <a href="#" data-toggle="modal" data-target="#exampleModal" class="txt1">
+                                Lupa Sandi?
+                            </a>
+                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Perhatian !!</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Jika anda mengalami lupa sandi. Silahkan hubungi admin kami melalui <b>Whatsapp</b> yang tertera dibawah.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a class="btn btn-primary" target="_blank" href="https://wa.me/628976782246">Hubungi Admin</a>
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Tutup Modal -->
+                    </div>
+                    
+                    <div class="container-login100-form-btn">
+                        <button type="submit" class="login100-form-btn">
+                            Daftar
+                        </button>
+                        <div class="divtext">
+                            <a href="{{route('login')}}" class="txt2">
+                                Masuk
+                            </a>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-</div>
-@endsection
+    
+    <!--===============================================================================================-->
+    <script src="{{asset('pluginlogin/vendor/jquery/jquery-3.2.1.min.js')}}"></script>
+    <!--===============================================================================================-->
+    <script src="{{asset('pluginlogin/vendor/animsition/js/animsition.min.js')}}"></script>
+    <!--===============================================================================================-->
+    <script src="{{asset('pluginlogin/vendor/bootstrap/js/popper.js')}}"></script>
+    <script src="{{asset('pluginlogin/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
+    <!--===============================================================================================-->
+    <script src="{{asset('pluginlogin/vendor/select2/select2.min.js')}}"></script>
+    <!--===============================================================================================-->
+    <script src="{{asset('pluginlogin/vendor/daterangepicker/moment.min.js')}}"></script>
+    <script src="{{asset('pluginlogin/vendor/daterangepicker/daterangepicker.js')}}"></script>
+    <!--===============================================================================================-->
+    <script src="{{asset('pluginlogin/vendor/countdowntime/countdowntime.js')}}"></script>
+    <!--===============================================================================================-->
+    <script src="{{asset('pluginlogin/js/main.js')}}"></script>
+    
+</body>
+</html>

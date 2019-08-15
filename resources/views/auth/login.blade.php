@@ -90,11 +90,11 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        Jika anda mengalami lupa sandi. Silahkan hubungi admin kami melalui whatsapp yang tertera dibawah.
+                                        Jika anda mengalami lupa sandi. Silahkan hubungi admin kami melalui <b>Whatsapp</b> yang tertera dibawah.
                                     </div>
                                     <div class="modal-footer">
                                             <a class="btn btn-primary" target="_blank" href="https://wa.me/628976782246">Hubungi Admin</a>
-                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
                                     </div>
                                 </div>
                             </div>
