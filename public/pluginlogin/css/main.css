@@ -158,6 +158,18 @@ iframe {
   color: #999999;
 }
 
+.txt2 {
+  font-family: Poppins-Regular;
+  font-size: 15px;
+  line-height: 1.4;
+  color: #999999;
+}
+
+.divtext {
+  padding-top: 3%;
+  padding-left: 40px;
+}
+
 /*//////////////////////////////////////////////////////////////////
 [ login ]*/
 
@@ -209,7 +221,7 @@ iframe {
   background-size: cover;
   background-position: center;
 
-  padding: 70px 15px 74px 15px;
+  padding: 70px 15px 70px 15px;
 }
 
 .login100-form-title-1 {
@@ -217,6 +229,16 @@ iframe {
   font-size: 30px;
   color: #fff;
   text-transform: uppercase;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.login100-form-title-2 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  padding-top: 5px;
+  color: #fff;
   line-height: 1.2;
   text-align: center;
 }
