@@ -43,27 +43,22 @@
                     </span>
                 </div>
                 
-                <form class="login100-form validate-form" method="POST" action="{{ route('login') }}">
+                <form class="login100-form validate-form" method="POST" action="{{ route('auth.login.custom') }}">
                     @csrf
+                    @error('error')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
                     <div class="wrap-input100 validate-input m-b-26" data-validate="Email is required">
-                        <span class="label-input100">Email</span>
-                        <input class="input100" name="email" type="email" placeholder="Enter email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-                        @error('email')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
+                        <span class="label-input100">Nomor Polisi</span>
+                        <input class="input100" name="no_pol" type="text" placeholder="Enter Nomor Polisi" value="{{ old('no_pol') }}" required autocomplete="email" autofocus>
                         <span class="focus-input100"></span>
                     </div>
                     
                     <div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
                         <span class="label-input100">Sandi</span>
                         <input class="input100" type="password" name="password" required autocomplete="current-password" placeholder="Masukkan Sandi">
-                        @error('password')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
                         <span class="focus-input100"></span>
                     </div>
                     
