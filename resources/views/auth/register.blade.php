@@ -89,12 +89,12 @@
                         <div class="contact100-form-checkbox">
                             <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
                             <label class="label-checkbox100" for="ckb1">
-                                Selalu saya
+                                Saya setuju dengan ketentuan
                             </label>
                         </div>
                         <div>
                             <a href="#" data-toggle="modal" data-target="#exampleModal" class="txt1">
-                                Lupa Sandi?
+                                Ketentuan!
                             </a>
                         </div>
                         <!-- Modal -->
@@ -102,16 +102,15 @@
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Perhatian !!</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Ketentuan Pengisian</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        Jika anda mengalami lupa sandi. Silahkan hubungi admin kami melalui <b>Whatsapp</b> yang tertera dibawah.
+                                        Untuk mengisi formulir data pendaftaran. Pada pengisian kolom <b>Nomor Polisi</b> harap diisi tanpa ruang perkata atau <b>Space</b>.<br><br><b>Contoh :</b>   B1902ELA
                                     </div>
                                     <div class="modal-footer">
-                                        <a class="btn btn-primary" target="_blank" href="https://wa.me/628976782246">Hubungi Admin</a>
                                         <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
                                     </div>
                                 </div>
