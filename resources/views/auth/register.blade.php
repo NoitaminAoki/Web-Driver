@@ -43,57 +43,24 @@
                     </span>
                 </div>
                 
-                <form class="login100-form validate-form" method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+                <form class="login100-form validate-form" method="POST" action="{{ route('register') }}">
                     @csrf
+                    
+                    <div class="wrap-input100 validate-input m-b-26" data-validate="Nama is required">
+                        <span class="label-input100">Nomor Polisi</span>
+                        <input class="input100" id="name" type="text" name="no_pol" value="{{ old('no_pol') }}" required autocomplete="false" autofocus>
+                        @error('no_pol')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                        <span class="focus-input100"></span>
+                    </div>
                     
                     <div class="wrap-input100 validate-input m-b-26" data-validate="Nama is required">
                         <span class="label-input100">Nama</span>
                         <input class="input100" id="name" type="text" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
                         @error('name')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
-                        <span class="focus-input100"></span>
-                    </div>
-                    
-                    <div class="wrap-input100 validate-input m-b-26" data-validate="Email is required">
-                        <span class="label-input100">Foto Profil</span>
-                        <input class="input100" id="photo_profile" type="file" accept=".png,.jpg,.jpeg" name="photo_profile" value="{{ old('photo_profile') }}" required autocomplete="photo_profile" autofocus>
-                        @error('photo_profile')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
-                        <span class="focus-input100"></span>
-                    </div>
-                    
-                    <div class="wrap-input100 validate-input m-b-26" data-validate="Email is required">
-                        <span class="label-input100">Foto KTP</span>
-                        <input class="input100" id="photo_ktp" type="file" accept=".png,.jpg,.jpeg" name="photo_ktp" value="{{ old('photo_ktp') }}" required autocomplete="photo_ktp" autofocus>
-                        @error('photo_ktp')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
-                        <span class="focus-input100"></span>
-                    </div>
-                    
-                    <div class="wrap-input100 validate-input m-b-26" data-validate="Email is required">
-                        <span class="label-input100">Nomer Telepon</span>
-                        <input class="input100" id="no_telp" type="text" name="no_telp" value="{{ old('no_telp') }}" required autocomplete="no_telp" autofocus>
-                        @error('no_telp')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
-                        <span class="focus-input100"></span>
-                    </div>
-                    
-                    <div class="wrap-input100 validate-input m-b-26" data-validate="Email is required">
-                        <span class="label-input100">Email</span>
-                        <input class="input100" id="email" type="email" name="email" value="{{ old('email') }}" required autocomplete="email">
-                        @error('email')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>

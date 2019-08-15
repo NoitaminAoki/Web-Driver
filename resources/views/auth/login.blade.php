@@ -52,7 +52,7 @@
                     @enderror
                     <div class="wrap-input100 validate-input m-b-26" data-validate="Email is required">
                         <span class="label-input100">Nomor Polisi</span>
-                        <input class="input100" name="no_pol" type="text" placeholder="Enter Nomor Polisi" value="{{ old('no_pol') }}" required autocomplete="email" autofocus>
+                        <input class="input100" name="no_pol" type="text" placeholder="Enter Nomor Polisi" value="{{ old('no_pol') }}" required autocomplete="false" autofocus>
                         <span class="focus-input100"></span>
                     </div>
                     
@@ -101,11 +101,6 @@
                         <button type="submit" class="login100-form-btn">
                             Masuk
                         </button>
-                        <div class="divtext">
-                            <a href="{{route('register')}}" class="txt2">
-                                Daftar
-                            </a>
-                        </div>
                     </div>
                 </form>
             </div>
