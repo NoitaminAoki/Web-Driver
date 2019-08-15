@@ -40,7 +40,7 @@ class LoginController extends Controller
 
     public function customLogin(Request $request)
     {
-        $request::validate(['no_pol' => ['required'], 'password' => ['required']]);
+        $request::validate(['no_pol' => 'required', 'password' => 'required']);
         $user = User::where('no_pol', '=', $request->no_pol)->first();
         if(empty($user)) {
             $error = ['user' => 'Nomor Polisi atau password yang anda masukkan salah!'];
