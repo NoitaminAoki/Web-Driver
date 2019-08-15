@@ -18,6 +18,15 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>
+    .my-custom-file-input {
+        border: 1px solid #ced4da;
+        border-style: dashed;
+        width: 100%;
+        color: #000;
+        padding: 1px;
+    }
+    </style>
 </head>
 <body>
     <div id="app">
