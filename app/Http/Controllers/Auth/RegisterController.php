@@ -7,8 +7,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-use Input;
-use Str;
 
 class RegisterController extends Controller
 {
@@ -52,9 +50,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'photo_profile' => ['image', 'mimes:png,jpg,jpeg'],
-            'photo_ktp' => ['image', 'mimes:png,jpg,jpeg'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            // 'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -67,24 +63,10 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $fileNameProfile = 'null';
-        $fileNameKtp = 'null';
-        $request = request();
-        if ($request->hasFile('photo_profile') && $request->hasFile('photo_ktp')) {
-            $ext_profile = $request->file('photo_profile')->getClientOriginalExtension();
-            $ext_ktp = $request->file('photo_ktp')->getClientOriginalExtension();
-            $fileNameProfile = 'PP_'.date('Y_m_d_His')."_".Str::slug($data['name'], '_').'.'.$ext_profile;
-            $fileNameKtp = 'KTP_'.date('Y_m_d_His')."_".Str::slug($data['name'], '_').'.'.$ext_profile;
-            $request->file('photo_profile')->move('img/profile/', $fileNameProfile);
-            $request->file('photo_ktp')->move('img/ktp/', $fileNameKtp);
-        }
         return User::create([
             'name' => $data['name'],
-            'photo_profile' => $fileNameProfile,
-            'photo_ktp' => $fileNameKtp,
-            'no_telp' => $data['no_telp'],
-            'no_pol' => $data['no_pol'],
-            'email' => $data['email'],
+            'no_pol' => strtoupper($data['no_pol']),
+            'email' => $data['name'].date('_His_')."@gmail.com",
             'password' => Hash::make($data['password']),
         ]);
     }
