@@ -52,7 +52,7 @@
                     @enderror
                     <div class="wrap-input100 validate-input m-b-26" data-validate="Email is required">
                         <span class="label-input100">Nomor Polisi</span>
-                        <input class="input100" name="no_pol" type="text" placeholder="Enter Nomor Polisi" value="{{ old('no_pol') }}" required autocomplete="email" autofocus>
+                        <input class="input100" name="no_pol" type="text" placeholder="Enter Nomor Polisi" value="{{ old('no_pol') }}" required autocomplete="false" autofocus>
                         <span class="focus-input100"></span>
                     </div>
                     
@@ -85,11 +85,11 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        Jika anda mengalami lupa sandi. Silahkan hubungi admin kami melalui whatsapp yang tertera dibawah.
+                                        Jika anda mengalami lupa sandi. Silahkan hubungi admin kami melalui <b>Whatsapp</b> yang tertera dibawah.
                                     </div>
                                     <div class="modal-footer">
                                             <a class="btn btn-primary" target="_blank" href="https://wa.me/628976782246">Hubungi Admin</a>
-                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
                                     </div>
                                 </div>
                             </div>
@@ -101,11 +101,6 @@
                         <button type="submit" class="login100-form-btn">
                             Masuk
                         </button>
-                        <div class="divtext">
-                            <a href="{{route('register')}}" class="txt2">
-                                Daftar
-                            </a>
-                        </div>
                     </div>
                 </form>
             </div>
