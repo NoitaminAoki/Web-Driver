@@ -11,6 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::view('/', 'welcome');
+
+Auth::routes();
+Route::group(['middleware' => 'auth'], function () {
+    
+    Route::view('/daftar', 'employee_index');
+    Route::view('/driver/daftar', 'driver_registration');
+    
 });
+Route::get('/home', 'HomeController@index')->name('home');
