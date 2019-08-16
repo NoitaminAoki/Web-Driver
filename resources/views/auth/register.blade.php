@@ -45,7 +45,7 @@
                 
                 <form class="login100-form validate-form" method="POST" action="{{ route('register') }}">
                     @csrf
-                    
+                
                     <div class="wrap-input100 validate-input m-b-26" data-validate="Nama is required">
                         <span class="label-input100">Nomor Polisi</span>
                         <input class="input100" id="name" type="text" name="no_pol" value="{{ old('no_pol') }}" required autocomplete="false" autofocus>

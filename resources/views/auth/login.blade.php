@@ -45,11 +45,11 @@
                 
                 <form class="login100-form validate-form" method="POST" action="{{ route('auth.login.custom') }}">
                     @csrf
-                    @error('error')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
+                    @if ($errors->any())
+                    <span class="invalid-feedback" style="display: block;" role="alert">
+                        <strong>{{ $errors->first() }}</strong>
                     </span>
-                    @enderror
+                    @endif
                     <div class="wrap-input100 validate-input m-b-26" data-validate="Email is required">
                         <span class="label-input100">Nomor Polisi</span>
                         <input class="input100" name="no_pol" type="text" placeholder="Enter Nomor Polisi" value="{{ old('no_pol') }}" required autocomplete="false" autofocus>

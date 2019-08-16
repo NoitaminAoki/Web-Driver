@@ -14,9 +14,10 @@
 Route::view('/', 'welcome');
 
 Auth::routes();
+Route::post('driver/login', 'Auth\LoginController@customLogin')->name('auth.login.custom');
 Route::group(['middleware' => 'auth'], function () {
-    Route::post('driver/login', 'Auth\LoginController@customLogin')->name('auth.login.custom');
     Route::get('driver/home', 'Driver\DriverController@index')->name('driver.index');
+    Route::post('driver/create/laporan', 'Driver\DriverController@createLaporan')->name('driver.create.laporan');
     Route::view('/daftar', 'employee_index');
     Route::view('/driver/daftar', 'driver_registration');
     
