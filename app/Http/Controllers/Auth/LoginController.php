@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use App\User;
 use Auth;
+use Illuminate\Http\Request;
+
 class LoginController extends Controller
 {
     /*
@@ -40,11 +42,10 @@ class LoginController extends Controller
 
     public function customLogin(Request $request)
     {
-        $request::validate(['no_pol' => 'required', 'password' => 'required']);
         $user = User::where('no_pol', '=', $request->no_pol)->first();
         if(empty($user)) {
-            $error = ['user' => 'Nomor Polisi atau password yang anda masukkan salah!'];
-            return redirect()->back()->withErrors(['error' => $error]);
+            $error = ['error' => 'Nomor Polisi atau password yang anda masukkan salah!'];
+            return redirect()->back()->withErrors($error);
         }
         Auth::login($user);
         return redirect()->route('driver.index');
