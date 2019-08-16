@@ -17,7 +17,10 @@ class DriverController extends Controller
 {
     public function index()
     {
+        $user_id = Auth::user()->id;
         $data['list_barang'] = Barang::all();
+        $data['oldLaporan'] = Laporan::where('user_id', $user_id)->whereDate('added_on', '=', date('Y-m-d'))->orderBy('id', 'DESC')->first();
+        // dd($data);
         return view('driver.home')->with($data);
     }
     
