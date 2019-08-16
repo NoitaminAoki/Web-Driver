@@ -2,6 +2,11 @@
 @section('title', 'Home Driver')
 @section('css-top')
 <link rel="stylesheet" href="{{ asset('plugins/select2/css/select2.min.css') }}">
+<style>
+    .img-preview {
+        display: none;
+    }
+</style>
 @endsection
 @section('body-title', 'Home')
 @section('breadcumb-1', 'Driver')
@@ -23,7 +28,7 @@
                     <div class="form-group">
                         <div class="col-12 px-0">
                             <label for="inputJenisMobil">Jenis Mobil</label>
-                            <input type="text" id="inputJenisMobil" name="jenis_mobil" class="form-control" placeholder="Jenis Mobil" required>
+                            <input type="text" id="inputJenisMobil" name="jenis_mobil" class="form-control" value="{{(!empty($oldLaporan))? $oldLaporan->jenis_mobil : ''}}" placeholder="Jenis Mobil" required>
                             <div class="invalid-tooltip">
                                 Harap Diisi.
                             </div>
@@ -40,7 +45,7 @@
                     <div class="form-group">
                         <div class="col-12 px-0">
                             <label for="inputSpvHunter">SPV Hunter</label>
-                            <input type="text" id="inputSpvHunter" name="spv_hunter" class="form-control" placeholder="Supervisor Hunter" required>
+                            <input type="text" id="inputSpvHunter" name="spv_hunter" class="form-control" value="{{(!empty($oldLaporan))? $oldLaporan->spv_hunter : ''}}" placeholder="Supervisor Hunter" required>
                             <div class="invalid-tooltip">
                                 Harap Diisi.
                             </div>
@@ -49,7 +54,7 @@
                     <div class="form-group">
                         <div class="col-12 px-0">
                             <label for="inputTujuan">Tujuan</label>
-                            <input type="text" id="inputTujuan" name="tujuan" class="form-control" placeholder="Tujuan" required>
+                            <input type="text" id="inputTujuan" name="tujuan" class="form-control" value="{{(!empty($oldLaporan))? $oldLaporan->tujuan : ''}}" placeholder="Tujuan" required>
                             <div class="invalid-tooltip">
                                 Harap Diisi.
                             </div>
@@ -58,7 +63,7 @@
                     <div class="form-group">
                         <div class="col-12 px-0">
                             <label for="inputJuragan">Nama Juragan</label>
-                            <input type="text" id="inputJuragan" name="nama_juragan" class="form-control" placeholder="Juragan" required>
+                            <input type="text" id="inputJuragan" name="nama_juragan" class="form-control" value="{{(!empty($oldLaporan))? $oldLaporan->nama_juragan : ''}}" placeholder="Juragan" required>
                             <div class="invalid-tooltip">
                                 Harap Diisi.
                             </div>
@@ -213,6 +218,7 @@
         var filename = e.target.files[0].name;
         $(e.target).next('.custom-file-label').text(filename);
         $(e.target).parent().next('.img-preview').attr('src', window.URL.createObjectURL(e.target.files[0]));
+        $(e.target).parent().next('.img-preview').show();
     });
 </script>
 @endsection
