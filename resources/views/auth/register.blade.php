@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Daftar Pengemudi - CleoWebDriver</title>
+    <title>Daftar Pengemudi - Cleo Driver</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->	
@@ -34,7 +34,7 @@
     <div class="limiter">
         <div class="container-login100">
             <div class="wrap-login100">
-                <div class="login100-form-title" style="background-image: url({{asset('pluginlogin/images/bg-01.jpg')}});">
+                <div class="register-form login100-form-title-register" style="background-image: url({{asset('img/items/backhome4.jpg')}});">
                     <span class="login100-form-title-1">
                         Daftar AKUN
                     </span>
