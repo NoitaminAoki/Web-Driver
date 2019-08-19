@@ -45,23 +45,23 @@
                 
                 <form class="login100-form validate-form" method="POST" action="{{ route('register') }}">
                     @csrf
-                
+                    
                     <div class="wrap-input100 validate-input m-b-26" data-validate="Nama is required">
                         <span class="label-input100">Nomor Polisi</span>
                         <input class="input100" id="name" type="text" name="no_pol" value="{{ old('no_pol') }}" required autocomplete="false" autofocus>
-                        @error('no_pol')
-                        <span class="invalid-feedback" role="alert">
+                        <span class="focus-input100">
+                        </span>@error('no_pol')
+                        <span class="invalid-feedback" style="display: block;" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                         @enderror
-                        <span class="focus-input100"></span>
                     </div>
                     
                     <div class="wrap-input100 validate-input m-b-26" data-validate="Nama is required">
                         <span class="label-input100">Nama</span>
                         <input class="input100" id="name" type="text" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
                         @error('name')
-                        <span class="invalid-feedback" role="alert">
+                        <span class="invalid-feedback" style="display: block;" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                         @enderror
@@ -71,14 +71,14 @@
                     <div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
                         <span class="label-input100">Sandi</span>
                         <input class="input100" id="password" type="password" name="password" required autocomplete="new-password">
-                        @error('password')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
                         <span class="focus-input100"></span>
                     </div>
-
+                    @error('password')
+                    <span class="invalid-feedback" style="display: block;" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+                    
                     <div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
                         <span class="label-input100">Konfirmasi Sandi</span>
                         <input class="input100" id="password-confirm" type="password" name="password_confirmation" required autocomplete="new-password">

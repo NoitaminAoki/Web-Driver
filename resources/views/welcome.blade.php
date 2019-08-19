@@ -24,9 +24,15 @@
                     Cleo Driver
                 </h1>
                 <p class="mbr-text pb-3 mbr-fonts-style display-5">
-                    Selamat Datang. Silahkan masuk untuk mengakses web portal
+                    Selamat Datang, Silahkan masuk untuk mengakses web portal cleo dengan menekan tombol dibawah ini
                 </p>
+                @if (Route::has('login'))
+                @auth
+                <div class="mbr-section-btn"><a class="btn btn-md btn-white-outline display-4" href="{{url('driver/home')}}">Beranda</a></div>
+                @else
                 <div class="mbr-section-btn"><a class="btn btn-md btn-white-outline display-4" href="{{route('login')}}">Masuk</a></div>
+                @endauth
+                @endif
             </div>
         </div>
     </div>
