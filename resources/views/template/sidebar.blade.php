@@ -60,9 +60,9 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="https://wa.me/628976782246" class="nav-link">
+              <a href="#" data-toggle="modal" data-target="#exampleModal" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Kontak Admin</p>
+                <p>Bantuan</p>
               </a>
             </li>
             <li class="nav-item">

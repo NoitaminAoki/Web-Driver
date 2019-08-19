@@ -69,7 +69,7 @@
                     </div>
                     
                     <div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
-                        <span class="label-input100">Pin (4 Digit)</span>
+                        <span class="label-input100">Nomor PIN (4 Digit)</span>
                         <input class="input100" id="password" type="password" name="password" required autocomplete="new-password">
                         <span class="focus-input100"></span>
                     </div>
@@ -80,14 +80,14 @@
                     @enderror
                     
                     <div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
-                        <span class="label-input100">Konfirmasi Pin (4 Digit)</span>
+                        <span class="label-input100">Konfirmasi Nomor PIN (4 Digit)</span>
                         <input class="input100" id="password-confirm" type="password" name="password_confirmation" required autocomplete="new-password">
                         <span class="focus-input100"></span>
                     </div>
                     
                     <div class="flex-sb-m w-full p-b-30">
                         <div class="contact100-form-checkbox">
-                            <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+                            <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me" required>
                             <label class="label-checkbox100" for="ckb1">
                                 Saya setuju dengan ketentuan
                             </label>
@@ -109,6 +109,7 @@
                                     </div>
                                     <div class="modal-body">
                                         Untuk mengisi formulir data pendaftaran. Pada pengisian kolom <b>Nomor Polisi</b> harap diisi tanpa ruang perkata atau <b>Space</b>.<br><br><b>Contoh :</b>   B1902ELA
+                                        <br><br>Dan untuk pengisian <b>Nomor PIN</b> harap mengisi sebanyak 4 Digit.<br><br><b>Contoh :</b> 1234
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>

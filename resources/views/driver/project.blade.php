@@ -1,13 +1,13 @@
 @extends('template.main')
-@section('title', 'Home Driver')
+@section('title', 'Profile')
 @section('css-top')
 <link rel="stylesheet" href="{{ asset('plugins/select2/css/select2.min.css') }}">
 <!-- SweetAlert2 -->
 <link rel="stylesheet" href="{{ asset('plugins/sweetalert2/sweetalert2.min.css') }}">
 @endsection
-@section('body-title', 'Home')
+@section('body-title', 'Driver Profile')
 @section('breadcumb-1', 'Driver')
-@section('breadcumb-2', 'profile')
+@section('breadcumb-2', 'Profile')
 @section('content')
 <section class="content">
     
