@@ -15,7 +15,7 @@ class CreateSubBarangsTable extends Migration
     {
         Schema::create('sub_barangs', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('barang_id')->unsigned()->nullable();
+            $table->integer('laporan_id')->unsigned()->nullable();
             $table->string('nama_sub_barang', 100);
             $table->integer('qty');
             $table->string('satuan', 50);

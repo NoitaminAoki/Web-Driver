@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/driver/home';
+    protected $redirectTo = '/driver';
 
     /**
      * Create a new controller instance.
@@ -65,7 +65,7 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'no_pol' => strtoupper(str_replace(' ', '', $data['no_pol'])),
-            'email' => $data['name'].date('_His_')."@gmail.com",
+            'email' => $data['name'].strtoupper(str_replace(' ', '', $data['no_pol']))."@gmail.com",
             'password' => Hash::make($data['password']),
         ]);
     }

@@ -57,7 +57,7 @@
                     </div>
                     
                     <div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
-                        <span class="label-input100">Sandi</span>
+                        <span class="label-input100">Pin (4 Digit)</span>
                         <input class="input100" type="password" name="password" required autocomplete="current-password" placeholder="Masukkan Sandi">
                         <span class="focus-input100"></span>
                     </div>

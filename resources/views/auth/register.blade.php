@@ -69,7 +69,7 @@
                     </div>
                     
                     <div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
-                        <span class="label-input100">Sandi</span>
+                        <span class="label-input100">Pin (4 Digit)</span>
                         <input class="input100" id="password" type="password" name="password" required autocomplete="new-password">
                         <span class="focus-input100"></span>
                     </div>
@@ -80,7 +80,7 @@
                     @enderror
                     
                     <div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
-                        <span class="label-input100">Konfirmasi Sandi</span>
+                        <span class="label-input100">Konfirmasi Pin (4 Digit)</span>
                         <input class="input100" id="password-confirm" type="password" name="password_confirmation" required autocomplete="new-password">
                         <span class="focus-input100"></span>
                     </div>

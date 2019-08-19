@@ -28,7 +28,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = 'driver/home';
+    protected $redirectTo = '/driver';
 
     /**
      * Create a new controller instance.
@@ -48,6 +48,6 @@ class LoginController extends Controller
             return redirect()->back()->withErrors($error);
         }
         Auth::login($user);
-        return redirect()->route('driver.index');
+        return redirect()->route('driver.home');
     }
 }

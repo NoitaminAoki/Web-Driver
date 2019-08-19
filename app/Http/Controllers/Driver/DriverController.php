@@ -15,6 +15,13 @@ use Illuminate\Support\Carbon;
 
 class DriverController extends Controller
 {
+    public function home()
+    {
+        $user_id = Auth::user()->id;
+        $data['laporan'] = Laporan::where('user_id', $user_id)->whereDate('added_on', '=', date('Y-m-d'))->orderBy('id', 'DESC')->first();
+        return view('driver.project')->with($data);
+    }
+
     public function index()
     {
         $user_id = Auth::user()->id;
@@ -73,27 +80,27 @@ class DriverController extends Controller
         $barang = Barang::find($request->id_barang);
         if($barang->nama_barang == 'BD206') {
             $sub = new SubBarang;
-            $sub->barang_id = $barang->id;
+            $sub->laporan_id = $table->id;
             $sub->nama_sub_barang = "Bracket Highlighter";
             $sub->qty = 1;
             $sub->satuan = 'PCS';
             $sub->save();
             $sub = new SubBarang;
-            $sub->barang_id = $barang->id;
+            $sub->laporan_id = $table->id;
             $sub->nama_sub_barang = "Insertion Highlighter";
             $sub->qty = 1;
             $sub->satuan = 'PCS';
             $sub->save();
         } else if($barang->nama_barang == 'GWK') {
             $sub = new SubBarang;
-            $sub->barang_id = $barang->id;
+            $sub->laporan_id = $table->id;
             $sub->nama_sub_barang = "Coolpack";
             $sub->qty = 1;
             $sub->satuan = 'PCS';
             $sub->save();
         }
-        $request->session()->flash('success_message', "Success adding");
-        return redirect()->route('driver.index');
+        $request->session()->flash('success', "Success adding");
+        return redirect()->route('driver.home');
 
     }
 }
