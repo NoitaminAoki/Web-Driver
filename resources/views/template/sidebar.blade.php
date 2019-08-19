@@ -19,55 +19,59 @@
     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
       <!-- Add icons to the links using the .nav-icon class
         with font-awesome or any other icon font library -->
+        {{-- <li class="nav-header">Driver</li> --}}
         <li class="nav-item has-treeview menu-open">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
-              Dashboard
+              Beranda
               <i class="right fas fa-angle-left"></i>
             </p>
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="/driver/home" class="nav-link active">
+              <a href="{{url('driver')}}" class="nav-link active">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Dashboard</p>
+                <p>Profil</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="./index2.html" class="nav-link">
+              <a href="{{url('driver/project')}}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Dashboard v2</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="./index3.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Dashboard v3</p>
+                <p>Buat Laporan</p>
               </a>
             </li>
           </ul>
         </li>
-        <li class="nav-header">MANAGES</li>
+        <li class="nav-header">Lainnya</li>
         <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-users"></i>
+            <i class="nav-icon fas fa-tools"></i>
             <p>
-              Employee
+              Pengaturan
               <i class="fas fa-angle-left right"></i>
             </p>
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="" class="nav-link">
+              <a href="{{url('/')}}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>List Employee</p>
+                <p>Kembali ke Home</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="" class="nav-link">
+              <a href="https://wa.me/628976782246" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Add Employee</p>
+                <p>Kontak Admin</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{route('logout')}}" class="nav-link" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" onsubmit="return confirm('Anda ingin keluar ?')" style="display: none;">
+                  @csrf
+                </form>
+                <i class="far fa-circle nav-icon"></i>
+                <p>Keluar</p>
               </a>
             </li>
           </ul>

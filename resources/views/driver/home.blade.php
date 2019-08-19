@@ -1,5 +1,5 @@
 @extends('template.main')
-@section('title', 'Home Driver')
+@section('title', 'Buat Laporan')
 @section('css-top')
 <link rel="stylesheet" href="{{ asset('plugins/select2/css/select2.min.css') }}">
 <style>
@@ -8,9 +8,9 @@
     }
 </style>
 @endsection
-@section('body-title', 'Home')
+@section('body-title', 'Buat Laporan')
 @section('breadcumb-1', 'Driver')
-@section('breadcumb-2', 'Car')
+@section('breadcumb-2', 'Laporan')
 @section('content')
 <div class="row">
     <div class="col-md-12">
@@ -145,7 +145,7 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="">KTP + Barcode + ADR(Closeup)</label>
+                        <label for="">KTP + Barcode + ADR (Closeup)</label>
                         <div class="custom-file">
                             <input type="file" class="custom-file-input" id="photo_ktp_barcode_adr" name="photo_ktp_barcode_adr" required>
                             <label class="custom-file-label" for="photo_ktp_barcode_adr">Choose file</label>
