@@ -52,9 +52,11 @@
                 </div>
                 <div class="col-12 col-md-12 col-lg-12 order-1 order-md-2">
                     <h3 class="text-primary">
-                        <i class="fas fa-user"></i> {{Auth::user()->name}}
+                        <i class="fas fa-user" style="padding-right: 10px;"></i> {{Auth::user()->name}}
                     </h3>
-                    <p class="text-muted">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terr.</p>
+                    <p class="text-muted">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut tempus lacus, at efficitur libero. Donec id tincidunt quam, ac bibendum nunc. Duis id dictum ipsum. Donec auctor risus ultrices, aliquet ligula in, fringilla purus. Sed imperdiet lobortis feugiat. In pretium at velit luctus viverra. Maecenas vel nulla risus. Cras id ex lorem. Nullam maximus nisi eget tristique porttitor. Nam eleifend enim in leo facilisis congue. Quisque ac quam non risus mollis consequat. Phasellus ullamcorper venenatis sodales. Nunc tincidunt ullamcorper arcu quis pharetra. Phasellus a laoreet tortor, et ornare ex.
+                    </p>
                     <br>
                     <div class="text-muted">
                         <p class="text-sm">Nomor Polisi
