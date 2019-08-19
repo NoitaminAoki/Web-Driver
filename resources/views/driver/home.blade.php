@@ -13,7 +13,7 @@
 @section('breadcumb-2', 'Laporan')
 @section('content')
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-lg-6 col-md-8 col-sm-10 mx-auto">
         <div class="card card-info">
             <div class="card-header">
                 <h3 class="card-title">General</h3>

@@ -70,7 +70,7 @@
                     
                     <div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
                         <span class="label-input100">Pin (4 Digit)</span>
-                        <input class="input100" id="password" type="password" name="password" required autocomplete="new-password">
+                        <input class="input100" max="9999" id="password" type="password" name="password" required autocomplete="new-password">
                         <span class="focus-input100"></span>
                     </div>
                     @error('password')
@@ -81,7 +81,7 @@
                     
                     <div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
                         <span class="label-input100">Konfirmasi Pin (4 Digit)</span>
-                        <input class="input100" id="password-confirm" type="password" name="password_confirmation" required autocomplete="new-password">
+                        <input class="input100" max="9999" id="password-confirm" type="password" name="password_confirmation" required autocomplete="new-password">
                         <span class="focus-input100"></span>
                     </div>
                     
@@ -150,6 +150,17 @@
     <script src="{{asset('pluginlogin/vendor/countdowntime/countdowntime.js')}}"></script>
     <!--===============================================================================================-->
     <script src="{{asset('pluginlogin/js/main.js')}}"></script>
+    
+    <script>
+        $('input[type=password][max]:not([max=""])').on('input', function(ev) {
+            var $this = $(this);
+            var maxlength = $this.attr('max').length;
+            var value = $this.val();
+            if (value && value.length >= maxlength) {
+                $this.val(value.substr(0, maxlength));
+            }
+        });
+    </script>
     
 </body>
 </html>

@@ -19,6 +19,7 @@ class DriverController extends Controller
     {
         $user_id = Auth::user()->id;
         $data['laporan'] = Laporan::where('user_id', $user_id)->whereDate('added_on', '=', date('Y-m-d'))->orderBy('id', 'DESC')->first();
+        $data['laporan_terakhir'] = Laporan::where('user_id', $user_id)->orderBy('id', 'DESC')->limit(5)->get();
         return view('driver.project')->with($data);
     }
 

@@ -28,7 +28,7 @@
                 </p>
                 @if (Route::has('login'))
                 @auth
-                <div class="mbr-section-btn"><a class="btn btn-md btn-white-outline display-4" href="{{url('driver/home')}}">Beranda</a></div>
+                <div class="mbr-section-btn"><a class="btn btn-md btn-white-outline display-4" href="{{url('driver')}}">Beranda</a></div>
                 @else
                 <div class="mbr-section-btn"><a class="btn btn-md btn-white-outline display-4" href="{{route('login')}}">Masuk</a></div>
                 @endauth
