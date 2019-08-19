@@ -24,7 +24,7 @@
     @yield('css')
     <style>
         .navbar-brand-logo {
-            background-image: url('{{asset("dist/img/EezyLogo.svg")}}');
+            background-image: url('{{asset("dist/img/cleologistik.png")}}');
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;

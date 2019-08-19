@@ -57,8 +57,8 @@
                     </div>
                     
                     <div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
-                        <span class="label-input100">Pin (4 Digit)</span>
-                        <input class="input100" max="9999" type="password" name="password" required autocomplete="current-password" placeholder="Masukkan Sandi">
+                        <span class="label-input100">PIN (4 Digit)</span>
+                        <input class="input100" max="9999" type="password" name="password" required autocomplete="current-password" placeholder="Masukkan Nomor PIN">
                         <span class="focus-input100"></span>
                     </div>
                     
@@ -71,7 +71,7 @@
                         </div>
                         <div>
                             <a href="#" data-toggle="modal" data-target="#exampleModal" class="txt1">
-                                Lupa Sandi?
+                                Lupa PIN?
                             </a>
                         </div>
                         <!-- Modal -->
@@ -85,10 +85,10 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        Jika anda mengalami lupa sandi. Silahkan hubungi admin kami melalui <b>Whatsapp</b> yang tertera dibawah.
+                                        Jika anda mengalami lupa PIN. Silahkan hubungi admin kami melalui <b>Whatsapp</b> yang tertera dibawah.
                                     </div>
                                     <div class="modal-footer">
-                                            <a class="btn btn-primary" target="_blank" href="https://wa.me/628976782246">Hubungi Admin</a>
+                                            <a class="btn btn-primary" target="_blank" href="https://wasap.at/OA2XVX">Hubungi Admin</a>
                                         <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
                                     </div>
                                 </div>
