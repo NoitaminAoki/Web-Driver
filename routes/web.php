@@ -23,4 +23,16 @@ Route::group(['middleware' => 'auth'], function () {
     Route::view('/driver/daftar', 'driver_registration');
     
 });
+Route::group(['namespace' => 'Admin', 'middleware' => ['auth:admin']], function () {
+    Route::get('admin/dashboard', function () {
+        echo "Berhasil";
+    })->name('admin.dashboard');
+});
+Route::namespace('Auth')->group(function ()
+{
+    Route::get('admin/login','AdminLoginController@showLoginForm');
+    Route::post('admin/login', 'AdminLoginController@login')->name('admin.login');
+    Route::get('admin/register','AdminRegisterController@showRegisterForm');
+    Route::post('admin/register', 'AdminRegisterController@register')->name('admin.register');
+});
 Route::get('/home', 'HomeController@index')->name('home');
