@@ -3,6 +3,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>@yield('title') | Cleo Web Driver</title>
     @yield('css-top')
+    <link rel="icon" type="image/png" href="{{asset('img/icons/cleologistic.ico')}}"/>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->

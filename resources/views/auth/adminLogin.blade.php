@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Admin Login - Cleo Web Driver</title>
+	<title>Login Admin - Cleo Web Driver</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="{{asset('pluginloginadmin/images/icons/favicon.ico')}}"/>
+	<link rel="icon" type="image/png" href="{{asset('img/icons/cleologistic.ico')}}"/>
 	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{asset('pluginloginadmin/vendor/bootstrap/css/bootstrap.min.css')}}">
 	<!--===============================================================================================-->
@@ -77,7 +77,7 @@
 					
 					<div class="flex-col-c p-t-50">
 						<span class="txt1 p-b-17">
-							Or Sign Up Using
+							Or
 						</span>
 						
 						<a href="{{route('admin.register')}}" class="txt2">

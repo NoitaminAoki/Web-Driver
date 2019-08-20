@@ -1,124 +1,136 @@
-@extends('layouts.app')
-
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Admin {{ __('Register') }}</div>
-                
-                <div class="card-body">
-                    <form method="POST" class="needs-validation" novalidate action="{{ route('admin.register') }}" enctype="multipart/form-data">
-                        @csrf
-                        
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
-                            
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus autocomplete="off">
-                                <div class="invalid-tooltip">
-                                    Please fill in a name.
-                                </div>
-                                @if ($errors->has('name'))
-                                <span class="invalid-tooltip" role="alert">
-                                    <strong>{{ $errors->first('name') }}</strong>
-                                </span>
-                                @endif
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="profile_img" class="col-md-4 col-form-label text-md-right">{{ __('Profile Picture') }}</label>
-                            
-                            <div class="col-md-6">
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input{{ $errors->has('profile_img') ? ' is-invalid' : '' }}" id="profile_img" name="profile_img" required autofocus>
-                                    <label class="custom-file-label" for="profile_img">Choose file</label>
-                                    <div class="invalid-tooltip">
-                                        Please fill in an image file.
-                                    </div>
-                                </div>
-                                @if ($errors->has('profile_img'))
-                                <span class="invalid-tooltip" role="alert">
-                                    <strong>{{ $errors->first('profile_img') }}</strong>
-                                </span>
-                                @endif
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-                            
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
-                                
-                                <div class="invalid-tooltip">
-                                    Please fill in an email.
-                                </div>
-                                @if ($errors->has('email'))
-                                <span class="invalid-tooltip" role="alert">
-                                    <strong>{{ $errors->first('email') }}</strong>
-                                </span>
-                                @endif
-                            </div>
-                        </div>
-                        
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-                            
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-                                
-                                <div class="invalid-tooltip">
-                                    Please fill in an password.
-                                </div>
-                                @if ($errors->has('password'))
-                                <span class="invalid-tooltip" role="alert">
-                                    <strong>{{ $errors->first('password') }}</strong>
-                                </span>
-                                @endif
-                            </div>
-                        </div>
-                        
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-                            
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Admin Register - Cleo Web Driver</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->	
+    <link rel="icon" type="image/png" href="{{asset('img/icons/cleologistic.ico')}}"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{asset('pluginregisteradmin/vendor/bootstrap/css/bootstrap.min.css')}}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{asset('pluginregisteradmin/fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{asset('pluginregisteradmin/vendor/animate/animate.css')}}">
+    <!--===============================================================================================-->	
+    <link rel="stylesheet" type="text/css" href="{{asset('pluginregisteradmin/vendor/css-hamburgers/hamburgers.min.css')}}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{asset('pluginregisteradmin/vendor/select2/select2.min.css')}}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{asset('pluginregisteradmin/css/util.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('pluginregisteradmin/css/main.css')}}">
+    <!--===============================================================================================-->
+</head>
+<body>
+    
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <div class="login100-pic js-tilt" data-tilt>
+                    <img src="{{asset('pluginregisteradmin/images/img-01.png')}}" alt="IMG">
                 </div>
+                
+                <form class="login100-form validate-form" method="POST" novalidate action="{{ route('admin.register') }}" enctype="multipart/form-data">
+                    <span class="login100-form-title">
+                        Admin Register
+                    </span>
+                    
+                    <div class="wrap-input100 validate-input" data-validate = "Name is required">
+                        <input class="input100" type="text" name="name" value="{{ old('name') }}" placeholder="Name" required>
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                        </span>
+                        @if ($errors->has('name'))
+                        <span class="invalid-tooltip" role="alert">
+                            <strong>{{ $errors->first('name') }}</strong>
+                        </span>
+                        @endif
+                    </div>
+                    
+                    <div class="wrap-input100 validate-input" data-validate = "Image is required">
+                        <input class="input100" type="file" name="profile_img" placeholder="Image" required>
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-image" aria-hidden="true"></i>
+                        </span>
+                        @if ($errors->has('profile_img'))
+                        <span class="invalid-tooltip" role="alert">
+                            <strong>{{ $errors->first('profile_img') }}</strong>
+                        </span>
+                        @endif
+                    </div>
+                    
+                    <div class="wrap-input100 validate-input" data-validate = "Email is required">
+                        <input class="input100" type="Email" name="email" value="{{ old('email') }}" placeholder="Email" required>
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
+                        @if ($errors->has('email'))
+                        <span class="invalid-tooltip" role="alert">
+                            <strong>{{ $errors->first('email') }}</strong>
+                        </span>
+                        @endif
+                    </div>
+                    
+                    <div class="wrap-input100 validate-input" data-validate = "Password is required">
+                        <input class="input100" type="password" name="password" placeholder="Password" required>
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-lock" aria-hidden="true"></i>
+                        </span>
+                        @if ($errors->has('password'))
+                        <span class="invalid-tooltip" role="alert">
+                            <strong>{{ $errors->first('password') }}</strong>
+                        </span>
+                        @endif
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate = "Password is required">
+                        <input class="input100" type="password" name="password_confirmation" placeholder="Confirm Password" required>
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-lock" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    
+                    <div class="container-login100-form-btn">
+                        <button class="login100-form-btn">
+                            Register
+                        </button>
+                    </div>
+                    
+                    <div class="text-center p-t-15">
+                        <a class="txt2" href="{{route('admin.login')}}">
+                            Sign in your Account
+                            <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-</div>
-@endsection
-@section('script')
-<script>
-    // Example starter JavaScript for disabling form submissions if there are invalid fields
-    (function() {
-        'use strict';
-        window.addEventListener('load', function() {
-            // Fetch all the forms we want to apply custom Bootstrap validation styles to
-            var forms = document.getElementsByClassName('needs-validation');
-            // Loop over them and prevent submission
-            var validation = Array.prototype.filter.call(forms, function(form) {
-                form.addEventListener('submit', function(event) {
-                    if (form.checkValidity() === false) {
-                        event.preventDefault();
-                        event.stopPropagation();
-                    }
-                    form.classList.add('was-validated');
-                }, false);
-            });
-        }, false);
-    })();
-</script>
-@endsection
+    
+    
+    
+    
+    <!--===============================================================================================-->	
+    <script src="{{asset('pluginregisteradmin/vendor/jquery/jquery-3.2.1.min.js')}}"></script>
+    <!--===============================================================================================-->
+    <script src="{{asset('pluginregisteradmin/vendor/bootstrap/js/popper.js')}}"></script>
+    <script src="{{asset('pluginregisteradmin/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
+    <!--===============================================================================================-->
+    <script src="{{asset('pluginregisteradmin/vendor/select2/select2.min.js')}}"></script>
+    <!--===============================================================================================-->
+    <script src="{{asset('pluginregisteradmin/vendor/tilt/tilt.jquery.min.js')}}"></script>
+    <script >
+        $('.js-tilt').tilt({
+            scale: 1.1
+        })
+    </script>
+    <!--===============================================================================================-->
+    <script src="{{asset('pluginregisteradmin/js/main.js')}}"></script>
+    
+</body>
+</html>
