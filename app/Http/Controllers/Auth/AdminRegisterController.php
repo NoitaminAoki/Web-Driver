@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use App\Admin;
+use App\Models\Admin;
 use Auth;
 use Date;
 
@@ -39,10 +39,10 @@ class AdminRegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');
+        $this->middleware('guest');
     }
 
-    public function showRegisterPage()
+    public function showRegisterForm()
     {
         return view('auth.adminRegister');
     }
