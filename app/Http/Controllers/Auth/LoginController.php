@@ -28,7 +28,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/driver/profil';
+    protected $redirectTo = '/driver/project';
 
     /**
      * Create a new controller instance.
