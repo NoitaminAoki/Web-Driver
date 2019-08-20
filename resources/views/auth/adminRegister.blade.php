@@ -45,43 +45,6 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="no_telp" class="col-md-4 col-form-label text-md-right">{{ __('Telephone Number') }}</label>
-                            <div class="col-md-6">
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text" id="validationTooltipUsernamePrepend">+62</span>
-                                    </div>
-                                    <input id="no_telp" type="text" class="form-control{{ $errors->has('no_telp') ? ' is-invalid' : '' }}" name="no_telp" value="{{ old('no_telp') }}" required autofocus autocomplete="off">
-                                    <div class="invalid-tooltip">
-                                        Please fill in a telephone number.
-                                    </div>
-                                    @if ($errors->has('no_telp'))
-                                    <span class="invalid-tooltip" role="alert">
-                                        <strong>{{ $errors->first('no_telp') }}</strong>
-                                    </span>
-                                    @endif
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('address') }}</label>
-                            
-                            <div class="col-md-6">
-                                <textarea id="address" class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}" name="address" required autofocus>
-                                    {{ old('address') }}
-                                </textarea>
-                                <div class="invalid-tooltip">
-                                    Please fill in an address.
-                                </div>
-                                @if ($errors->has('address'))
-                                <span class="invalid-tooltip" role="alert">
-                                    <strong>{{ $errors->first('address') }}</strong>
-                                </span>
-                                @endif
-                            </div>
-                        </div>
-                        
-                        <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
                             
                             <div class="col-md-6">
