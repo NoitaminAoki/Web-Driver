@@ -48,6 +48,6 @@ class LoginController extends Controller
             return redirect()->back()->withErrors($error);
         }
         Auth::login($user);
-        return redirect()->route('driver.home');
+        return redirect()->route('driver.index');
     }
 }
