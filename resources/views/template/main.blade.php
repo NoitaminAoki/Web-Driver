@@ -16,7 +16,7 @@
           Silahkan hubungi admin kami melalui <b>Whatsapp</b> yang tertera dibawah.
         </div>
         <div class="modal-footer">
-          <a class="btn btn-primary" target="_blank" href="https://wasap.at/Ffz66q">Hubungi Admin</a>
+          <a class="btn btn-primary" target="_blank" href="https://wasap.at/Hpxrq6">Hubungi Admin</a>
           <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
         </div>
       </div>
