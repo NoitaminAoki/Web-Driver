@@ -6,6 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use DateTime;
+use Carbon\Carbon;
 
 class User extends Authenticatable
 {
@@ -39,6 +40,6 @@ class User extends Authenticatable
     ];
 
     public function isOnline() {
-        return ($this->last_activity > new DateTime('-5 minutes') && $user->check()) ? true : false;
+        return ($this->last_activity > Carbon::now()->format('Y-m-d H:i:s')) ? true : false;
     }
 }

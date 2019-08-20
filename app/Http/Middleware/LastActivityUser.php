@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Factory as Auth;
+use Carbon\Carbon;
 
 class LastActivityUser
 {
@@ -33,9 +34,9 @@ class LastActivityUser
      */
     public function handle($request, Closure $next)
     {
-        if ($this->auth->check() && $this->auth->user()->last_activity < Carbon::now()->subMinutes(5)->format('Y-m-d H:i:s')) {
+        if ($this->auth->check() /*&& $this->auth->user()->last_activity < Carbon::now()->subMinutes(5)->format('Y-m-d H:i:s')*/) {
             $user = $this->auth->user();
-            $user->last_activity = new \DateTime;
+            $user->last_activity = new \DateTime('+5 minutes');
             $user->timestamps = false;
             $user->save();
         }
