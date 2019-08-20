@@ -7,7 +7,7 @@
     <!--===============================================================================================-->	
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i,700,700i&display=swap" rel="stylesheet">
     <!--===============================================================================================-->	
-    <link rel="icon" type="image/png" href="{{asset('pluginlogin/images/icons/favicon.ico')}}"/>
+    <link rel="icon" type="image/png" href="{{asset('img/icons/cleologistic.ico')}}"/>
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{{asset('pluginlogin/vendor/bootstrap/css/bootstrap.min.css')}}">
     <!--===============================================================================================-->
