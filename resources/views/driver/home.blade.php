@@ -220,7 +220,7 @@
                             <input type="file" class="custom-file-input" id="photo_juragan_ttd" name="photo_juragan_ttd" required>
                             <label class="custom-file-label" for="photo_juragan_ttd">Choose file</label>
                             <div class="invalid-tooltip">
-                                Please fill in an image file.
+                                Harap diisi dengan File Gambar.
                             </div>
                         </div>
                         <img src="#" alt="" style="height: 250px;" class="img-preview mt-2 rounded col-12">
@@ -232,7 +232,7 @@
                             <input type="file" class="custom-file-input" id="photo_ktp_barcode_adr" name="photo_ktp_barcode_adr" required>
                             <label class="custom-file-label" for="photo_ktp_barcode_adr">Choose file</label>
                             <div class="invalid-tooltip">
-                                Please fill in an image file.
+                                Harap diisi dengan File Gambar.
                             </div>
                         </div>
                         <img src="#" alt="" style="height: 250px;" class="img-preview mt-2 rounded col-12">
@@ -244,7 +244,7 @@
                             <input type="file" class="custom-file-input" id="photo_juragan_cabinet" name="photo_juragan_cabinet" required>
                             <label class="custom-file-label" for="photo_juragan_cabinet">Choose file</label>
                             <div class="invalid-tooltip">
-                                Please fill in an image file.
+                                Harap diisi dengan File Gambar.
                             </div>
                         </div>
                         <img src="#" alt="" style="height: 250px;" class="img-preview mt-2 rounded col-12">
@@ -256,7 +256,7 @@
                             <input type="file" class="custom-file-input" id="photo_ktp" name="photo_ktp" required>
                             <label class="custom-file-label" for="photo_ktp">Choose file</label>
                             <div class="invalid-tooltip">
-                                Please fill in an image file.
+                                Harap diisi dengan File Gambar.
                             </div>
                         </div>
                         <img src="#" alt="" style="height: 250px;" class="img-preview mt-2 rounded col-12">
