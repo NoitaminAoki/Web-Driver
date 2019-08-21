@@ -25,6 +25,7 @@ Route::group(['middleware' => ['auth', 'lastActivityUser']], function () {
 });
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['auth:admin']], function () {
     Route::get('dashboard', 'AdminController@dashboard')->name('admin.dashboard');
+    Route::get('user/report/excel/{id}', 'AdminController@reportUser')->name('admin.user.report.excel');
     Route::get('user/get/activity', 'AdminController@userGetActivity')->name('admin.user.get.activity');
 });
 Route::namespace('Auth')->group(function ()
