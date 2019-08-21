@@ -5,6 +5,8 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use DateTime;
+use Carbon\Carbon;
 
 class User extends Authenticatable
 {
@@ -16,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'no_pol', 'email', 'password',
+        'name', 'no_pol', 'status', 'email', 'password', 'last_activity'
     ];
 
     /**
@@ -36,4 +38,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function isOnline() {
+        return ($this->last_activity > Carbon::now()->format('Y-m-d H:i:s')) ? true : false;
+    }
 }

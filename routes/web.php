@@ -15,7 +15,7 @@ Route::view('/', 'welcome');
 
 Auth::routes();
 Route::post('driver/login', 'Auth\LoginController@customLogin')->name('auth.login.custom');
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => ['auth', 'lastActivityUser']], function () {
     Route::get('driver/profil', 'Driver\DriverController@home')->name('driver.home');
     Route::get('driver/project', 'Driver\DriverController@index')->name('driver.index');
     Route::post('driver/create/laporan', 'Driver\DriverController@createLaporan')->name('driver.create.laporan');
@@ -24,9 +24,7 @@ Route::group(['middleware' => 'auth'], function () {
     
 });
 Route::group(['namespace' => 'Admin', 'middleware' => ['auth:admin']], function () {
-    Route::get('admin/dashboard', function () {
-        echo "Berhasil";
-    })->name('admin.dashboard');
+    Route::get('admin/dashboard', 'AdminController@dashboard')->name('admin.dashboard');
 });
 Route::namespace('Auth')->group(function ()
 {

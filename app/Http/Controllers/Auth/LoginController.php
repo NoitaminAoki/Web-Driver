@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use App\User;
 use Auth;
+use Hash;
 
 class LoginController extends Controller
 {
@@ -43,11 +44,12 @@ class LoginController extends Controller
     public function customLogin(Request $request)
     {
         $user = User::where('no_pol', '=', $request->no_pol)->first();
-        if(empty($user)) {
+        if(!empty($user) && Hash::check($request->password, $user->password)) {
+            Auth::login($user);
+            return redirect()->route('driver.index');
+        } else {
             $error = 'Nomor Polisi atau password yang anda masukkan salah! | Pastikan Nomor Polisi yang anda masukkan tidak memakai spasi/jarak.';
             return redirect()->back()->withErrors($error);
         }
-        Auth::login($user);
-        return redirect()->route('driver.index');
     }
 }

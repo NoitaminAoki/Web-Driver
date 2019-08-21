@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
+use Carbon\Carbon;
 class CreateUsersTable extends Migration
 {
     /**
@@ -18,8 +18,10 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('no_pol', 50);
             $table->string('email')->unique();
+            $table->enum('status', ['Kontrak', 'Panggilan']);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->timestamp('last_activity')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
