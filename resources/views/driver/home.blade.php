@@ -133,7 +133,7 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="">Photo Juragan + TTD</label>
+                        <label for="">Foto Juragan / Outlet dan TTD</label>
                         <div class="custom-file">
                             <input type="file" class="custom-file-input" id="photo_juragan_ttd" name="photo_juragan_ttd" required>
                             <label class="custom-file-label" for="photo_juragan_ttd">Choose file</label>
@@ -145,7 +145,7 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="">KTP + Barcode + ADR (Closeup)</label>
+                        <label for="">Foto KTP, Barcode dan ADR (Closeup)</label>
                         <div class="custom-file">
                             <input type="file" class="custom-file-input" id="photo_ktp_barcode_adr" name="photo_ktp_barcode_adr" required>
                             <label class="custom-file-label" for="photo_ktp_barcode_adr">Choose file</label>
@@ -157,7 +157,7 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="">Juragan + Cabinet (Full Body)</label>
+                        <label for="">Foto Juragan / Outlet dan (Full Body)</label>
                         <div class="custom-file">
                             <input type="file" class="custom-file-input" id="photo_juragan_cabinet" name="photo_juragan_cabinet" required>
                             <label class="custom-file-label" for="photo_juragan_cabinet">Choose file</label>
@@ -169,7 +169,7 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="">KTP</label>
+                        <label for="">Foto KTP</label>
                         <div class="custom-file">
                             <input type="file" class="custom-file-input" id="photo_ktp" name="photo_ktp" required>
                             <label class="custom-file-label" for="photo_ktp">Choose file</label>

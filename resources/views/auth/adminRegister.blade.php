@@ -31,6 +31,7 @@
                 </div>
                 
                 <form class="login100-form validate-form" method="POST" novalidate action="{{ route('admin.register') }}" enctype="multipart/form-data">
+                    @csrf
                     <span class="login100-form-title">
                         Admin Register
                     </span>
@@ -49,7 +50,7 @@
                     </div>
                     
                     <div class="wrap-input100 validate-input" data-validate = "Image is required">
-                        <input class="input100" type="file" name="profile_img" placeholder="Image" required>
+                        <input style="padding-top:11px;" class="input100" type="file" name="profile_img" placeholder="Image" required>
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <i class="fa fa-image" aria-hidden="true"></i>
