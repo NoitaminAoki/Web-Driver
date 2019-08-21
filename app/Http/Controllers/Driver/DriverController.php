@@ -46,6 +46,10 @@ class DriverController extends Controller
             'id_barang' => ['required'],
             'qty' => ['required'],
             'satuan' => ['required'],
+            'photo_juragan_ttd' => ['required', 'image', 'mimes:png,jpg,jpeg'],
+            'photo_ktp_barcode_adr' => ['required', 'image', 'mimes:png,jpg,jpeg'],
+            'photo_juragan_cabinet' => ['required', 'image', 'mimes:png,jpg,jpeg'],
+            'photo_ktp' => ['required', 'image', 'mimes:png,jpg,jpeg'],
         ]);
         $file_photo_juragan_ttd = $request->file('photo_juragan_ttd');
         $file_photo_ktp_barcode_adr = $request->file('photo_ktp_barcode_adr');

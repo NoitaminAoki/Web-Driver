@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-@include('template.head')
+@include('template.admin.head')
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed">
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -25,7 +25,7 @@
   <!-- Tutup Modal -->
   <div class="wrapper">
     
-    @include('template.navbar')
+    @include('template.admin.navbar')
     
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-light-info elevation-4">
@@ -37,7 +37,7 @@
         <br>
       </a>
       
-      @include('template.sidebar')
+      @include('template.admin.sidebar')
     </aside>
     
     
@@ -85,6 +85,6 @@
     <!-- /.control-sidebar -->
   </div>
   <!-- ./wrapper -->
-  @include('template.scripts')
+  @include('template.admin.scripts')
 </body>
 </html>

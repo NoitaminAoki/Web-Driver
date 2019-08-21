@@ -23,8 +23,9 @@ Route::group(['middleware' => ['auth', 'lastActivityUser']], function () {
     Route::view('/driver/daftar', 'driver_registration');
     
 });
-Route::group(['namespace' => 'Admin', 'middleware' => ['auth:admin']], function () {
-    Route::get('admin/dashboard', 'AdminController@dashboard')->name('admin.dashboard');
+Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['auth:admin']], function () {
+    Route::get('dashboard', 'AdminController@dashboard')->name('admin.dashboard');
+    Route::get('user/get/activity', 'AdminController@userGetActivity')->name('admin.user.get.activity');
 });
 Route::namespace('Auth')->group(function ()
 {
