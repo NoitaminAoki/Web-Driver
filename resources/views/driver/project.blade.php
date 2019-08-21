@@ -30,7 +30,7 @@
                             <b class="d-block">{{Auth::user()->no_pol}}</b>
                         </p>
                         <p class="text-sm">Project Leader
-                            <b class="d-block">Tony Chicken</b>
+                            <b class="d-block">PT Cleo Multi Transindo</b>
                         </p>
                     </div>
                     <h5 class="mt-5 text-muted">Laporan Hari Ini</h5>

@@ -10,7 +10,7 @@
 @section('breadcumb-2', 'Dashboard')
 @section('content')
 <section class="content">
-    <div class="col-lg-8">
+    <div class="col-lg-6">
         <div class="card">
             <div class="card-header border-transparent">
                 <h3 class="card-title">User Activity</h3>
@@ -18,9 +18,6 @@
                 <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-widget="collapse">
                         <i class="fas fa-minus"></i>
-                    </button>
-                    <button type="button" class="btn btn-tool" data-widget="remove">
-                        <i class="fas fa-times"></i>
                     </button>
                 </div>
             </div>
@@ -41,7 +38,7 @@
                                 <td><a href="pages/examples/invoice.html">{{$item->no_pol}}</a></td>
                             <td>{{$item->name}}</td>
                                 @if ($item->isOnline())
-                                <td><span class="badge text-success">&bull; Online</span></td>
+                                <td><span class="badge badge-success">&bull; Online</span></td>
                                 @else
                                 <td><span class="badge text-secondary">&bull; Offline ({{\Carbon\Carbon::parse($item->last_activity)->diffForHumans()}})</span></td>
                                 @endif

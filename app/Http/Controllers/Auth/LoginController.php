@@ -38,6 +38,7 @@ class LoginController extends Controller
      */
     public function __construct()
     {
+        $this->middleware('clearActivityUser')->only('logout');
         $this->middleware('guest')->except('logout');
     }
 
@@ -52,4 +53,13 @@ class LoginController extends Controller
             return redirect()->back()->withErrors($error);
         }
     }
+
+    // protected function loggedOut(Request $request)
+    // {
+    //     $user = Auth::user();
+    //     $user->last_activity = new \DateTime;
+    //     $user->timestamps = false;
+    //     $user->save(); 
+    //     return redirect('/');
+    // }
 }
