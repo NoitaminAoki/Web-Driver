@@ -299,8 +299,8 @@
             
             <div class="stars">
                 <div class="central-body">
-                    <img class="image-404" src="http://salehriaz.com/404Page/img/404.svg" width="300px">
-                    <a href="{{url('/')}}" class="btn-go-home" target="_blank">GO BACK HOME</a>
+                    <img class="image-404" src="{{asset('img\items\error\ERROR404.svg')}}" width="300px">
+                    <a href="{{url('/')}}" class="btn-go-home">GO BACK HOME</a>
                 </div>
                 <div class="objects">
                     <img class="object_rocket" src="http://salehriaz.com/404Page/img/rocket.svg" width="40px">

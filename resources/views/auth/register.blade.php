@@ -58,6 +58,17 @@
                     </div>
                     
                     <div class="wrap-input100 validate-input m-b-26" data-validate="Nama is required">
+                        <span class="label-input100">Status</span>
+                        <input class="input100" placeholder="Kontrak / Panggilan" id="status" type="text" name="status" value="{{ old('status') }}" required autocomplete="name" autofocus>
+                        @error('status')
+                        <span class="invalid-feedback" style="display: block;" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                        <span class="focus-input100"></span>
+                    </div>
+                    
+                    <div class="wrap-input100 validate-input m-b-26" data-validate="Nama is required">
                         <span class="label-input100">Nama</span>
                         <input class="input100" id="name" type="text" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
                         @error('name')
@@ -109,7 +120,7 @@
                                     </div>
                                     <div class="modal-body">
                                         Untuk mengisi formulir data pendaftaran. Pada pengisian kolom <b>Nomor Polisi</b> harap diisi tanpa ruang perkata atau <b>Space</b>.<br><br><b>Contoh :</b>   B1902ELA
-                                        <br><br>Dan untuk pengisian <b>Nomor PIN</b> harap mengisi sebanyak 4 Digit.<br><br><b>Contoh :</b> 1234
+                                        <br><br>Harap mengisilan kolom <b>Status</b> dengan<br><b>Kontrak</b> / <b>Panggilan</b>.<br><br>Dan untuk pengisian <b>Nomor PIN</b> harap mengisi sebanyak 4 Digit.<br><br><b>Contoh :</b> 1234
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
