@@ -20,25 +20,47 @@
       <!-- Add icons to the links using the .nav-icon class
         with font-awesome or any other icon font library -->
         {{-- <li class="nav-header">Driver</li> --}}
-        <li class="nav-item has-treeview {{(Request::is('driver/*'))? 'menu-open' : ''}}">
-          <a href="#" class="nav-link {{(Request::is('driver/*'))? 'active' : ''}}">
-            <i class="nav-icon fas fa-tachometer-alt"></i>
+        <li class="nav-item has-treeview {{(Request::is('admin/*'))? 'menu-open' : ''}}">
+          <a href="#" class="nav-link {{(Request::is('admin/*'))? 'active' : ''}}">
+            <i class="nav-icon fas fa-user"></i>
             <p>
-              Beranda
+              Admin
               <i class="right fas fa-angle-left"></i>
             </p>
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="{{url('driver/profil')}}" class="nav-link {{(Request::is('driver/profil'))? 'active' : ''}}">
+              <a href="{{url('admin/dashboard')}}" class="nav-link {{(Request::is('admin/dashboard'))? 'active' : ''}}">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Profil</p>
+                <p>Beranda</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item has-treeview {{(Request::is('admin/driver/*'))? 'menu-open' : ''}}">
+          <a href="#" class="nav-link {{(Request::is('admin/driver/*'))? 'active' : ''}}">
+            <i class="nav-icon fas fa-users"></i>
+            <p>
+              Driver
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="{{url('admin/driver', ['status' => 'all'])}}" class="nav-link {{(Request::is('admin/driver/all'))? 'active' : ''}}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Semua</p>
+              </a>
+            <li class="nav-item">
+              <a href="{{url('admin/driver', ['status' => 'kontrak'])}}" class="nav-link {{(Request::is('admin/driver/kontrak'))? 'active' : ''}}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Kontrak</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="{{url('driver/project')}}" class="nav-link {{(Request::is('driver/project'))? 'active' : ''}}">
+              <a href="{{url('admin/driver', ['status' => 'panggilan'])}}" class="nav-link {{(Request::is('admin/driver/panggilan'))? 'active' : ''}}">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Buat Laporan</p>
+                <p>Panggilan</p>
               </a>
             </li>
           </ul>

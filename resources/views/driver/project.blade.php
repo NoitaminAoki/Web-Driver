@@ -38,7 +38,7 @@
                         <p class="text-sm">Jenis Mobil
                             <b class="d-block">{{(!empty($laporan))? $laporan->jenis_mobil : 'Belum ada'}}</b>
                         </p>
-                        <p class="text-sm">Tujuan
+                        <p class="text-sm">Alamat Tujuan
                             <b class="d-block">{{(!empty($laporan))? $laporan->tujuan : 'Belum ada'}}</b>
                         </p>
                         <p class="text-sm">Nama Juragan
@@ -73,11 +73,11 @@
                                 </div>
                                 <!-- /.user-block -->
                                 <p class="text-capitalize">
-                                    <b>Tujuan:</b> {{$item->tujuan}} <br>
-                                    <b>Juragan:</b> {{$item->nama_juragan}} <br>
-                                    <b>Toko/Outlet:</b> {{$item->nama_toko}} <br>
-                                    <b>Pemilik Toko/Outlet:</b> {{$item->nama_pemilik_toko}} <br>
-                                    <b>Nomor Handphone:</b> {{$item->no_handphone}}
+                                    <b>Alamat Tujuan :</b> {{$item->tujuan}} <br>
+                                    <b>Juragan :</b> {{$item->nama_juragan}} <br>
+                                    <b>Toko/Outlet :</b> {{$item->nama_toko}} <br>
+                                    <b>Pemilik Toko/Outlet :</b> {{$item->nama_pemilik_toko}} <br>
+                                    <b>Nomor Handphone :</b> {{$item->no_handphone}}
                                 </p>
                                 
                                 <p>

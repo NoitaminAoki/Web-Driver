@@ -4,6 +4,7 @@
             <th>Nomor Polisi</th>
             <th>Nama Driver</th>
             <th>Status</th>
+            <th>Waktu</th>
         </tr>
     </thead>
     <tbody>
@@ -16,6 +17,7 @@
             @else
             <td><span class="badge text-secondary">&bull; Offline ({{\Carbon\Carbon::parse($item->last_activity)->diffForHumans()}})</span></td>
             @endif
+            <td><small>{{\Carbon\Carbon::parse($item->last_activity)->format('Y-m-d H:i:s')}}</small></td>
         </tr>
         @endforeach
     </tbody>

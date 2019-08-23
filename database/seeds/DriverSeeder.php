@@ -17,7 +17,9 @@ class DriverSeeder extends Seeder
             'email' => 'Agung_Purnomo_B9373KAP@gmail.com',
             'status' => 'Kontrak',
             'password' => Hash::make('1234'),
-            'last_activity' => new \DateTime
+            'last_activity' => new \DateTime,
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
         DB::table('users')->insert([
             'name' => 'Ahmad Irfan Efendi',
@@ -25,7 +27,9 @@ class DriverSeeder extends Seeder
             'email' => 'Ahmad_Irfan_Efendi_B9894KAR@gmail.com',
             'status' => 'Kontrak',
             'password' => Hash::make('1234'),
-            'last_activity' => new \DateTime
+            'last_activity' => new \DateTime,
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
         DB::table('users')->insert([
             'name' => 'Andi Lau',
@@ -33,7 +37,9 @@ class DriverSeeder extends Seeder
             'email' => 'Andi_Lau_A8355TZ@gmail.com',
             'status' => 'Kontrak',
             'password' => Hash::make('1234'),
-            'last_activity' => new \DateTime
+            'last_activity' => new \DateTime,
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
         DB::table('users')->insert([
             'name' => 'Arifin PDO',
@@ -41,7 +47,9 @@ class DriverSeeder extends Seeder
             'email' => 'arifin_pdo_B9777TW@gmail.com',
             'status' => 'Panggilan',
             'password' => Hash::make('1234'),
-            'last_activity' => new \DateTime
+            'last_activity' => new \DateTime,
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
         DB::table('users')->insert([
             'name' => 'Arnen',
@@ -49,7 +57,9 @@ class DriverSeeder extends Seeder
             'email' => 'Arnen_B9501KAR@gmail.com',
             'status' => 'Kontrak',
             'password' => Hash::make('1234'),
-            'last_activity' => new \DateTime
+            'last_activity' => new \DateTime,
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
         DB::table('users')->insert([
             'name' => 'Bowo',
@@ -57,7 +67,9 @@ class DriverSeeder extends Seeder
             'email' => 'bowo_B9576UAP@gmail.com',
             'status' => 'Panggilan',
             'password' => Hash::make('1234'),
-            'last_activity' => new \DateTime
+            'last_activity' => new \DateTime,
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
         DB::table('users')->insert([
             'name' => 'Bu Wiwin',
@@ -65,7 +77,9 @@ class DriverSeeder extends Seeder
             'email' => 'Bu_Wiwin_B9754TAV@gmail.com',
             'status' => 'Kontrak',
             'password' => Hash::make('1234'),
-            'last_activity' => new \DateTime
+            'last_activity' => new \DateTime,
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
         DB::table('users')->insert([
             'name' => 'Dodi',
@@ -73,7 +87,9 @@ class DriverSeeder extends Seeder
             'email' => 'dodi_B9049SZX@gmail.com',
             'status' => 'Panggilan',
             'password' => Hash::make('1234'),
-            'last_activity' => new \DateTime
+            'last_activity' => new \DateTime,
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
         DB::table('users')->insert([
             'name' => 'Eko Purnomo',
@@ -81,7 +97,9 @@ class DriverSeeder extends Seeder
             'email' => 'Eko_Purnomo_F8637GY@gmail.com',
             'status' => 'Kontrak',
             'password' => Hash::make('1234'),
-            'last_activity' => new \DateTime
+            'last_activity' => new \DateTime,
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
         DB::table('users')->insert([
             'name' => 'Farhan',
@@ -89,7 +107,9 @@ class DriverSeeder extends Seeder
             'email' => 'farhan_B9669FAK@gmail.com',
             'status' => 'Panggilan',
             'password' => Hash::make('1234'),
-            'last_activity' => new \DateTime
+            'last_activity' => new \DateTime,
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
         DB::table('users')->insert([
             'name' => 'Heru Saputra',
@@ -97,7 +117,9 @@ class DriverSeeder extends Seeder
             'email' => 'Heru_Saputra_B9276KAP@gmail.com',
             'status' => 'Kontrak',
             'password' => Hash::make('1234'),
-            'last_activity' => new \DateTime
+            'last_activity' => new \DateTime,
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
         DB::table('users')->insert([
             'name' => 'Junaedi QQ Dwi Julianty',
@@ -105,7 +127,9 @@ class DriverSeeder extends Seeder
             'email' => 'Junaedi_QQ_Dwi_Julianty_B9598FAB@gmail.com',
             'status' => 'Kontrak',
             'password' => Hash::make('1234'),
-            'last_activity' => new \DateTime
+            'last_activity' => new \DateTime,
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
         DB::table('users')->insert([
             'name' => 'Lukman',
@@ -113,7 +137,9 @@ class DriverSeeder extends Seeder
             'email' => 'lukman_B9109FRW@gmail.com',
             'status' => 'Panggilan',
             'password' => Hash::make('1234'),
-            'last_activity' => new \DateTime
+            'last_activity' => new \DateTime,
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
         DB::table('users')->insert([
             'name' => 'Maman Permana Putra',
@@ -121,7 +147,9 @@ class DriverSeeder extends Seeder
             'email' => 'maman_permana_putra_B9954KAR@gmail.com',
             'status' => 'Kontrak',
             'password' => Hash::make('1234'),
-            'last_activity' => new \DateTime
+            'last_activity' => new \DateTime,
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
         DB::table('users')->insert([
             'name' => 'Marianto Marpaung',
@@ -129,7 +157,9 @@ class DriverSeeder extends Seeder
             'email' => 'Marianto_Marpaung_B9389KAR@gmail.com',
             'status' => 'Kontrak',
             'password' => Hash::make('1234'),
-            'last_activity' => new \DateTime
+            'last_activity' => new \DateTime,
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
         DB::table('users')->insert([
             'name' => 'Mastur',
@@ -137,7 +167,9 @@ class DriverSeeder extends Seeder
             'email' => 'mastur_B9153SAH@gmail.com',
             'status' => 'Panggilan',
             'password' => Hash::make('1234'),
-            'last_activity' => new \DateTime
+            'last_activity' => new \DateTime,
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
         DB::table('users')->insert([
             'name' => 'Maulana',
@@ -145,7 +177,9 @@ class DriverSeeder extends Seeder
             'email' => 'maulana_B9075KAH@gmail.com',
             'status' => 'Panggilan',
             'password' => Hash::make('1234'),
-            'last_activity' => new \DateTime
+            'last_activity' => new \DateTime,
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
         DB::table('users')->insert([
             'name' => 'Moh. Ali Imron',
@@ -153,7 +187,9 @@ class DriverSeeder extends Seeder
             'email' => 'Moh._Ali_Imron_B9782KAP@gmail.com',
             'status' => 'Kontrak',
             'password' => Hash::make('1234'),
-            'last_activity' => new \DateTime
+            'last_activity' => new \DateTime,
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
         DB::table('users')->insert([
             'name' => 'Mursit',
@@ -161,7 +197,9 @@ class DriverSeeder extends Seeder
             'email' => 'mursit_B9804FAH@gmail.com',
             'status' => 'Panggilan',
             'password' => Hash::make('1234'),
-            'last_activity' => new \DateTime
+            'last_activity' => new \DateTime,
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
         DB::table('users')->insert([
             'name' => 'Nalim Sunaryo',
@@ -169,7 +207,9 @@ class DriverSeeder extends Seeder
             'email' => 'Nalim_Sunaryo_B9520FUB@gmail.com',
             'status' => 'Kontrak',
             'password' => Hash::make('1234'),
-            'last_activity' => new \DateTime
+            'last_activity' => new \DateTime,
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
         DB::table('users')->insert([
             'name' => 'Nano',
@@ -177,7 +217,9 @@ class DriverSeeder extends Seeder
             'email' => 'nano_B9674UAO@gmail.com',
             'status' => 'Panggilan',
             'password' => Hash::make('1234'),
-            'last_activity' => new \DateTime
+            'last_activity' => new \DateTime,
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
         DB::table('users')->insert([
             'name' => 'Niman',
@@ -185,7 +227,9 @@ class DriverSeeder extends Seeder
             'email' => 'Niman_B9484KAR@gmail.com',
             'status' => 'Kontrak',
             'password' => Hash::make('1234'),
-            'last_activity' => new \DateTime
+            'last_activity' => new \DateTime,
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
         DB::table('users')->insert([
             'name' => 'Rahman',
@@ -193,7 +237,9 @@ class DriverSeeder extends Seeder
             'email' => 'Rahman_BE9683C@gmail.com',
             'status' => 'Kontrak',
             'password' => Hash::make('1234'),
-            'last_activity' => new \DateTime
+            'last_activity' => new \DateTime,
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
         DB::table('users')->insert([
             'name' => 'Ranu',
@@ -201,7 +247,9 @@ class DriverSeeder extends Seeder
             'email' => 'ranu_B9286BAR@gmail.com',
             'status' => 'Panggilan',
             'password' => Hash::make('1234'),
-            'last_activity' => new \DateTime
+            'last_activity' => new \DateTime,
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
         DB::table('users')->insert([
             'name' => 'Remin',
@@ -209,7 +257,9 @@ class DriverSeeder extends Seeder
             'email' => 'Remin_B9940KAF@gmail.com',
             'status' => 'Kontrak',
             'password' => Hash::make('1234'),
-            'last_activity' => new \DateTime
+            'last_activity' => new \DateTime,
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
         DB::table('users')->insert([
             'name' => 'Safuwan QQ Saiful Achlan',
@@ -217,7 +267,9 @@ class DriverSeeder extends Seeder
             'email' => 'Safuwan_QQ_Saiful_Achlan_B9121KAA@gmail.com',
             'status' => 'Kontrak',
             'password' => Hash::make('1234'),
-            'last_activity' => new \DateTime
+            'last_activity' => new \DateTime,
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
         DB::table('users')->insert([
             'name' => 'Sidik',
@@ -225,7 +277,9 @@ class DriverSeeder extends Seeder
             'email' => 'sidik_B9460KAJ@gmail.com',
             'status' => 'Panggilan',
             'password' => Hash::make('1234'),
-            'last_activity' => new \DateTime
+            'last_activity' => new \DateTime,
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
         DB::table('users')->insert([
             'name' => 'Singgih',
@@ -233,7 +287,9 @@ class DriverSeeder extends Seeder
             'email' => 'singgih_A8799AH@gmail.com',
             'status' => 'Panggilan',
             'password' => Hash::make('1234'),
-            'last_activity' => new \DateTime
+            'last_activity' => new \DateTime,
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
         DB::table('users')->insert([
             'name' => 'Sumindar Darwin Sinaga',
@@ -241,7 +297,9 @@ class DriverSeeder extends Seeder
             'email' => 'Sumindar_Darwin_Sinaga_B9716FAT@gmail.com',
             'status' => 'Kontrak',
             'password' => Hash::make('1234'),
-            'last_activity' => new \DateTime
+            'last_activity' => new \DateTime,
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
         DB::table('users')->insert([
             'name' => 'Tardi Suryadi',
@@ -249,7 +307,9 @@ class DriverSeeder extends Seeder
             'email' => 'Tardi_Suryadi_B9773KAP@gmail.com',
             'status' => 'Kontrak',
             'password' => Hash::make('1234'),
-            'last_activity' => new \DateTime
+            'last_activity' => new \DateTime,
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
         DB::table('users')->insert([
             'name' => 'Toniara Sitinjak',
@@ -257,7 +317,9 @@ class DriverSeeder extends Seeder
             'email' => 'Toniara_Sitinjak_B9048UAP@gmail.com',
             'status' => 'Kontrak',
             'password' => Hash::make('1234'),
-            'last_activity' => new \DateTime
+            'last_activity' => new \DateTime,
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
         DB::table('users')->insert([
             'name' => 'Usman',
@@ -265,7 +327,9 @@ class DriverSeeder extends Seeder
             'email' => 'usman_B9412KAD@gmail.com',
             'status' => 'Panggilan',
             'password' => Hash::make('1234'),
-            'last_activity' => new \DateTime
+            'last_activity' => new \DateTime,
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
         DB::table('users')->insert([
             'name' => 'Yopie',
@@ -273,7 +337,9 @@ class DriverSeeder extends Seeder
             'email' => 'yopie_B9873FAG@gmail.com',
             'status' => 'Panggilan',
             'password' => Hash::make('1234'),
-            'last_activity' => new \DateTime
+            'last_activity' => new \DateTime,
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
     }
 }

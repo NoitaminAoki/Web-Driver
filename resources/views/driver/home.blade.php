@@ -135,8 +135,8 @@
                     </div>
                     <div class="form-group">
                         <div class="col-12 px-0">
-                            <label for="inputTujuan">Tujuan</label>
-                            <input type="text" id="inputTujuan" name="tujuan" class="form-control" value="{{(!empty($oldLaporan))? $oldLaporan->tujuan : ''}}" placeholder="Tujuan" required>
+                            <label for="inputTujuan">Alamat Tujuan</label>
+                            <input type="text" id="inputTujuan" name="tujuan" class="form-control" value="{{(!empty($oldLaporan))? $oldLaporan->tujuan : ''}}" placeholder="Alamat Tujuan" required>
                             <div class="invalid-tooltip">
                                 Harap Diisi.
                             </div>

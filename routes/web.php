@@ -27,6 +27,8 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['aut
     Route::get('dashboard', 'AdminController@dashboard')->name('admin.dashboard');
     Route::get('user/report/excel/{id}', 'AdminController@reportUser')->name('admin.user.report.excel');
     Route::get('user/get/activity', 'AdminController@userGetActivity')->name('admin.user.get.activity');
+    Route::get('driver/{status}', 'AdminController@driverIndex')->name('admin.driver.index');
+    Route::post('driver/laporan/pdf/{id?}', 'AdminController@driverLaporanPdf')->name('admin.driver.laporan.pdf');
 });
 Route::namespace('Auth')->group(function ()
 {
