@@ -13,68 +13,23 @@
 @section('breadcumb-2', 'Dashboard')
 @section('content')
 <section class="content">
-    {{-- <div class="col-12">
-        <div class="card">
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table table-bordered table-hover">
-                        <thead>
-                            <tr>
-                                <td colspan="3" class="border-0"><b>Jenis Mobil :&nbsp;&nbsp;</b> {{$laporan[count($laporan)-1]->jenis_mobil}}</td>
-                                <td colspan="3" class="border-0"><b>No. Mobil :&nbsp;&nbsp;</b> {{$laporan[count($laporan)-1]->user->no_pol}}</td>
-                                <td colspan="4" class="border-0"><b>Nama Sopir :&nbsp;&nbsp;</b> {{$laporan[count($laporan)-1]->user->name}}</td>
-                            </tr>
-                            <tr>
-                                <td colspan="3" class="border-0"><b>SPV Hunter :&nbsp;&nbsp;</b> {{$laporan[count($laporan)-1]->spv_hunter}}</td>
-                                <td colspan="7" class="border-0"><b>Tujuan :&nbsp;&nbsp;</b> {{$laporan[count($laporan)-1]->tujuan}}</td>
-                            </tr>
-                            <tr>
-                                <td class="font-weight-bold text-capitalize bg-warning border-dark" align="center">nama Juragan</td>
-                                <td class="font-weight-bold text-capitalize bg-warning border-dark" align="center">Nama Toko / Outlet</td>
-                                <td class="font-weight-bold text-capitalize bg-warning border-dark" align="center">No.Handphone</td>
-                                <td class="font-weight-bold text-capitalize bg-warning border-dark" align="center">Nama BARANG</td>
-                                <td class="font-weight-bold text-capitalize bg-warning border-dark" align="center">Qty</td>
-                                <td class="font-weight-bold text-capitalize bg-warning border-dark" align="center">Satuan</td>
-                                <td class="font-weight-bold text-capitalize bg-warning border-dark" align="center">Juragan + TTD</td>
-                                <td class="font-weight-bold text-capitalize bg-warning border-dark" align="center">KTP+Barcode+ADR (Closeup)</td>
-                                <td class="font-weight-bold text-capitalize bg-warning border-dark" align="center">Juragan+Cabinet (Full Body)</td>
-                                <td class="font-weight-bold text-capitalize bg-warning border-dark" align="center">KTP</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($laporan as $item)
-                            <tr>
-                                <td class="border-dark" align="center">{{$item->nama_juragan}}</td>
-                                <td class="border-dark" align="center">{{$item->nama_toko}}</td>
-                                <td class="border-dark" align="center">{{$item->nama_pemilik_toko}}</td>
-                                <td class="border-dark" align="center">
-                                    {{$item->barang->nama_barang}}
-                                </td>
-                                <td class="border-dark" align="center">{{$item->qty_barang}}</td>
-                                <td class="border-dark" align="center">{{$item->satuan_barang}}</td>
-                                <td class="border-dark" rowspan="{{count($item->subBarang())+1}}" align="center"><img style="width: 200px; height: 150px;" src="{{asset('img/driver/juragan/'.$item->photo_ktp_barcode_adr)}}" alt=""></td>
-                                <td class="border-dark" rowspan="{{count($item->subBarang())+1}}" align="center"><img style="width: 200px; height: 150px;" src="{{ asset('img/driver/ktpBarcode/'.$item->photo_juragan_ttd) }}" alt=""></td>
-                                <td class="border-dark" rowspan="{{count($item->subBarang())+1}}" align="center"><img style="width: 200px; height: 150px;" src="{{ asset('img/driver/juraganCabinet/'.$item->photo_juragan_cabinet) }}" alt=""></td>
-                                <td class="border-dark" rowspan="{{count($item->subBarang())+1}}" align="center"><img style="width: 200px; height: 150px;" src="{{ asset('img/driver/ktp/'.$item->photo_ktp) }}" alt=""></td>
-                            </tr>
-                            @foreach ($item->subBarang() as $subItem)
-                            <tr>
-                                <td class="border-dark" align="center"><br></td>
-                                <td class="border-dark" align="center"><br></td>
-                                <td class="border-dark" align="center"><br></td>
-                                <td class="border-dark" align="center">{{$subItem->nama_sub_barang}}</td>
-                                <td class="border-dark" align="center">{{$subItem->qty}}</td>
-                                <td class="border-dark" align="center" class="text-lowercase">{{$subItem->satuan}}</td>
-                            </tr>
-                            @endforeach
-                            @endforeach
-                        </tbody>
-                    </table>
+    <div class="row">
+        <div class="col-12">
+            <div class="card card-outline card-info">
+                <div class="card-header border-transparent">
+                    <h3 class="card-title">Jumlah Laporan</h3>
+                    
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-widget="collapse">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <canvas id="penghasilan-chart" height="200"></canvas>
                 </div>
             </div>
         </div>
-    </div> --}}
-    <div class="row">
         <div class="col-lg-4 py-0">
             <div class="col-12">
                 <div class="card card-outline card-info">
@@ -120,7 +75,7 @@
             <div class="col-12">
                 <div class="card card-outline card-info">
                     <div class="card-header border-transparent">
-                        <h3 class="card-title">Laporan Driver</h3>
+                        <h3 class="card-title">Laporan Driver ({{$total_laporan}})</h3>
                         
                         <div class="card-tools">
                             <button type="button" class="btn btn-tool" data-widget="collapse">
@@ -221,39 +176,108 @@
 <script src="{{ asset('plugins/datatables/dataTables.bootstrap4.js') }}"></script>
 <!-- SweetAlert2 -->
 <script src="{{ asset('plugins/sweetalert2/sweetalert2.min.js') }}"></script>
-<!-- HandleBar -->
-{{-- <script src="{{ asset('plugins/handlebar/handlebars-v4.1.2.js') }}"></script> --}}
+<!-- Chart -->
+<script src="{{ asset('plugins/chart.js/Chart.min.js') }}"></script>
 <script>
-    $(document).ready(function() {
-        $('.datatables').dataTable({
-            "order": [[ 3, "desc" ]]
-        });
-        setInterval(function() {
-            updateUserActivity('#parentUserActivity');
-        }, 60000);
-    });
-    
-    $('[data-widget="get-user-activity"]').on('click', function () {
-        var target = $(this).data('target');
-        updateUserActivity(target); 
-    });
-    
-    function updateUserActivity(target) {
-        $.ajax({
-            url: "{{route('admin.user.get.activity')}}",
-            method: 'GET',
-            success: function (result) {
-                if(result.code === 200) {
-                    $(target).html(result.content);
-                    $(target+' table').dataTable({
-                        "order": [[ 3, "desc" ]]
-                    });
+    $(function () {
+        'use strict'
+        var ticksStyle = {
+            fontColor: '#495057',
+            fontStyle: 'bold'
+        }
+        var mode      = 'index'
+        var intersect = true
+        var $penghasilanChart = $('#penghasilan-chart')
+        var penghasilanChart  = new Chart($penghasilanChart, {
+            type   : 'bar',
+            data   : {
+                labels  : {!! json_encode($xAxis) !!},
+                datasets: [
+                {
+                    backgroundColor: '#28a745',
+                    borderColor    : '#28a745',
+                    label: '#Jumlah laporan',
+                    data           : @json($chartPending)
                 }
+                ]
             },
-            error: function (xhr, status, dll) {
-                console.log(xhr.responseText);
-            }
+            options: {
+                maintainAspectRatio: false,
+                tooltips           : {
+                    mode     : mode,
+                    intersect: intersect
+                },
+                hover              : {
+                    mode     : mode,
+                    intersect: intersect
+                },
+                legend             : {
+                    display: false
+                },
+                scales             : {
+                    yAxes: [{
+                        // display: false,
+                        gridLines: {
+                            display      : true,
+                            lineWidth    : '4px',
+                            color        : 'rgba(0, 0, 0, .2)',
+                            zeroLineColor: 'transparent'
+                        },
+                        ticks    : $.extend({
+                            beginAtZero: true,
+                            // Include a dollar sign in the ticks
+                            callback: function (value, index, values) {
+                                // if (value >= 1000000) {
+                                    //     value /= 1000000
+                                    //     value += 'JT'
+                                    // }
+                                    return value
+                                }
+                            }, ticksStyle)
+                        }],
+                        xAxes: [{
+                            display  : true,
+                            gridLines: {
+                                display: false
+                            },
+                            ticks    : ticksStyle
+                        }]
+                    }
+                }
+            })
         });
-    }
-</script>
-@endsection
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('.datatables').dataTable({
+                "order": [[ 3, "desc" ]]
+            });
+            setInterval(function() {
+                updateUserActivity('#parentUserActivity');
+            }, 60000);
+        });
+        
+        $('[data-widget="get-user-activity"]').on('click', function () {
+            var target = $(this).data('target');
+            updateUserActivity(target); 
+        });
+        
+        function updateUserActivity(target) {
+            $.ajax({
+                url: "{{route('admin.user.get.activity')}}",
+                method: 'GET',
+                success: function (result) {
+                    if(result.code === 200) {
+                        $(target).html(result.content);
+                        $(target+' table').dataTable({
+                            "order": [[ 3, "desc" ]]
+                        });
+                    }
+                },
+                error: function (xhr, status, dll) {
+                    console.log(xhr.responseText);
+                }
+            });
+        }
+    </script>
+    @endsection

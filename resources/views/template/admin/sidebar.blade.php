@@ -20,8 +20,8 @@
       <!-- Add icons to the links using the .nav-icon class
         with font-awesome or any other icon font library -->
         {{-- <li class="nav-header">Driver</li> --}}
-        <li class="nav-item has-treeview {{(Request::is('admin/*'))? 'menu-open' : ''}}">
-          <a href="#" class="nav-link {{(Request::is('admin/*'))? 'active' : ''}}">
+        <li class="nav-item has-treeview {{(Request::is('admin/*/'))? 'menu-open' : ''}}">
+          <a href="#" class="nav-link {{(Request::is('admin/*/'))? 'active' : ''}}">
             <i class="nav-icon fas fa-user"></i>
             <p>
               Admin
@@ -61,6 +61,30 @@
               <a href="{{url('admin/driver', ['status' => 'panggilan'])}}" class="nav-link {{(Request::is('admin/driver/panggilan'))? 'active' : ''}}">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Panggilan</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-header">MASTER</li>
+        <li class="nav-item has-treeview {{(Request::is('admin/master/laporan') || Request::is('admin/master/laporan/*'))? 'menu-open' : ''}}">
+          <a href="#" class="nav-link {{(Request::is('admin/master/laporan') || Request::is('admin/master/laporan/*'))? 'active' : ''}}">
+            <i class="nav-icon fas fa-user"></i>
+            <p>
+              Laporan
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="{{url('admin/master/laporan')}}" class="nav-link {{(Request::is('admin/master/laporan'))? 'active' : ''}}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Daftar</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{url('admin/master/laporan/upload')}}" class="nav-link {{(Request::is('admin/master/laporan/upload'))? 'active' : ''}}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Upload Laporan</p>
               </a>
             </li>
           </ul>

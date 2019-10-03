@@ -38,6 +38,7 @@
                                     <th>Nama Driver</th>
                                     <th>Status</th>
                                     <th>Tanggal Registrasi</th>
+                                    <th>List Laporan</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -48,6 +49,20 @@
                                     <td>{{$item->name}}</td>
                                     <td>{{$item->status}}</td>
                                     <td>{{\Carbon\Carbon::parse($item->created_at)->formatLocalized('%d %B %Y')}}</td>
+                                    <td>
+                                        <ul>
+                                            @php
+                                            $int_row = 0;
+                                            @endphp
+                                            @foreach ($item->item as $subitem)
+                                            @php
+                                                $int_row += $subitem->total;
+                                            @endphp
+                                            <li>{{$subitem->tanggal.': '.$subitem->total}}</li>
+                                            @endforeach
+                                            <li>{{'Total: '.$int_row}}</li>
+                                        </ul>
+                                    </td>
                                     <td>
                                         <button class="btn btn-success btn-sm btn-print" data-id="{{$item->id}}" data-toggle="modal" data-target="#modal-print"><i class="fa fa-print"></i> Print</button>
                                     </td>

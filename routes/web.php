@@ -29,6 +29,10 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['aut
     Route::get('user/get/activity', 'AdminController@userGetActivity')->name('admin.user.get.activity');
     Route::get('driver/{status}', 'AdminController@driverIndex')->name('admin.driver.index');
     Route::post('driver/laporan/pdf/{id?}', 'AdminController@driverLaporanPdf')->name('admin.driver.laporan.pdf');
+    Route::get('driver/laporan/excel/{id?}', 'AdminController@driverLaporanExcel')->name('admin.driver.laporan.excel');
+    Route::get('master/laporan', 'MasterLaporanController@index')->name('admin.master.laporan.index');
+    Route::get('master/laporan/upload', 'MasterLaporanController@upload')->name('admin.master.laporan.upload');
+    Route::post('master/laporan/upload', 'MasterLaporanController@uploadStore')->name('admin.master.laporan.upload.store');
 });
 Route::namespace('Auth')->group(function ()
 {

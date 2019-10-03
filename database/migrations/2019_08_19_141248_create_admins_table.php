@@ -18,8 +18,8 @@ class CreateAdminsTable extends Migration
             $table->string('name');
             $table->string('code_admin', 100);
             $table->string('profile_img');
-            $table->enum('level', ['Super Administrator', 'Administrator']);
-            $table->enum('sub_level', ['Super Admin', 'Admin']);
+            $table->enum('level', ['Super Administrator', 'Administrator', 'Client']);
+            $table->enum('sub_level', ['Super Admin', 'Admin', 'Client']);
             $table->string('email')->unique();
             $table->string('password');
             $table->timestamps();
